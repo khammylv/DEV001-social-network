@@ -6,11 +6,11 @@ import { Begin } from '../src/component/Begin.js';
 import { Login } from '../src/component/Login.js';
 import { Home } from '../src/component/Home.js';
 import { validar } from '../src/lib/validar.js';
-import { Error } from '../src/component/Error.js';
+import { Error } from '../src/component/Error';
 
 jest.mock('../src/__mocks__/main.js');
 jest.mock('../src/lib/__mocks__/modal.js');
-jest.mock('../src/lib/__mocks__/index.js');
+jest.mock('firebase/auth');
 
 describe('test de registro', () => {
   it('debería ser una función', () => {
