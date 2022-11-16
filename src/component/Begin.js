@@ -1,3 +1,6 @@
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../lib/index.js';
+
 export const Begin = (onNavigate) => {
   const HomeDiv = document.createElement('div');
   HomeDiv.className = 'bienvenida';
@@ -42,6 +45,23 @@ export const Begin = (onNavigate) => {
   regresarHome.classList = 'btn_regresar';
   regresarHome.src = '../assets/img/casa.webp';
   regresarHome.alt = 'imagen casita';
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log(user);
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      // const uid = user.uid;
+      // console.log(uid);
+      const textodos = document.createElement('h2');
+      textodos.className = 'Nombrebienvenida';
+      textodos.innerHTML = user.email;
+      HomeDiv.appendChild(textodos);
+
+      // ...
+    } else {
+      alert('no usuario');
+    }
+  });
   regresarHome.addEventListener('click', () => onNavigate('/'));
 
   HomeDiv.appendChild(regresarHome);
