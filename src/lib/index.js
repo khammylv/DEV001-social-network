@@ -5,7 +5,7 @@ import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { app } from './Firebase.js';
 
 // GETUTH
-const auth = getAuth(app);
+export const auth = getAuth(app);
 export function formularioregistro(email, password) {
   return createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
