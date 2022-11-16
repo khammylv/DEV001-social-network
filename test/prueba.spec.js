@@ -10,8 +10,8 @@ describe('testd de index', () => {
     console.log(testIndex);
     expect(checkapp).toHaveBeenCalled();
   });
-  // eslint-disable-next-line jest/no-focused-tests
-  it.only('tes2', () => index.formularioregistro('a', 'b', 'c').then((email) => {
+
+  it('tes2', () => index.formularioregistro('a', 'b', 'c').then((email) => {
     expect(createUserWithEmailAndPassword).toHaveBeenCalledWith();
     expect(email).toBe();
   }));
