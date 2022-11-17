@@ -10,3 +10,9 @@ export class GoogleAuthProvider {
 export const createUserWithEmailAndPassword = jest.fn().mockResolvedValue({
   user: { email: 'jaja@gmail.com' },
 });
+
+export const signInWithEmailAndPassword = jest.fn().mockResolvedValue({
+  user: { email: 'camila01@gmail.com' },
+});
+
+export const onAuthStateChanged = jest.fn();

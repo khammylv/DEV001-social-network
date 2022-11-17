@@ -5,8 +5,6 @@ import { Register } from '../src/component/Register.js';
 import { Begin } from '../src/component/Begin.js';
 import { Login } from '../src/component/Login.js';
 import { Home } from '../src/component/Home.js';
-import { validar } from '../src/lib/validar.js';
-import { Error } from '../src/component/Error';
 
 jest.mock('../src/__mocks__/main.js');
 jest.mock('../src/lib/__mocks__/modal.js');
@@ -47,14 +45,9 @@ describe('testd de begin', () => {
     const boton = elemento.querySelector('.btn_atras');
     expect(boton).not.toBeNull();
   });
-});
-describe('testd de Error', () => {
-  it('debería ser una función', () => {
-    expect(typeof Error).toBe('function');
-  });
-  it('Existe el boton regresar', () => {
-    const elemento = Error();
-    const boton = elemento.querySelector('.btn_inicio');
+  it('Existe el boton cerrar secion', () => {
+    const elemento = Begin();
+    const boton = elemento.querySelector('.btn_cerrar');
     expect(boton).not.toBeNull();
   });
 });
@@ -88,15 +81,6 @@ describe('testd de home', () => {
     const elemento = Home();
     const boton = elemento.querySelector('.botonregistro');
     expect(boton).not.toBeNull();
-  });
-});
-
-describe('test de la funcion validar', () => {
-  it('debería ser una función', () => {
-    expect(typeof validar).toBe('function');
-  });
-  it('Debería retornar "true" para "khammylv@gmail.com" "5550121"', () => {
-    expect(validar('khammylv@gmail.com', '5550121')).toBe(true);
   });
 });
 
