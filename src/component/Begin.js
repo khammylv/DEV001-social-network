@@ -12,8 +12,24 @@ export const Begin = (onNavigate) => {
   buttonHome3.classList = 'btn_atras';
   divBoton.appendChild(buttonHome3);
   buttonHome3.addEventListener('click', () => onNavigate('/login'));
+  // boton para cierre sesion
+  const divBotoncerrar = document.createElement('div');
+  divBotoncerrar.className = 'btn_logout';
+  HomeDiv.appendChild(divBotoncerrar);
+  const buttonlogout = document.createElement('button');
+  buttonlogout.textContent = 'logout';
+  buttonlogout.classList = 'btn_cerrar';
+  divBotoncerrar.appendChild(buttonlogout);
+  buttonlogout.addEventListener('click', (e) => {
+    e.preventDefault();
+    auth.signOut().then(() => {
+      console.log('sign out');
+      onNavigate('/');
+    });
+  });
+
   const textoBienvenida = document.createElement('h1');
-  textoBienvenida.textContent = 'Bienvenidx a Lymusic';
+  textoBienvenida.textContent = 'Welcome to Lymusic';
   textoBienvenida.classList = 'texto_bienvenida';
   HomeDiv.appendChild(textoBienvenida);
   const form = document.createElement('form');
@@ -45,6 +61,8 @@ export const Begin = (onNavigate) => {
   regresarHome.classList = 'btn_regresar';
   regresarHome.src = '../assets/img/casa.webp';
   regresarHome.alt = 'imagen casita';
+  const textodos = document.createElement('h2');
+  textodos.className = 'Nombrebienvenida';
   onAuthStateChanged(auth, (user) => {
     if (user) {
       console.log(user);
@@ -52,19 +70,13 @@ export const Begin = (onNavigate) => {
       // https://firebase.google.com/docs/reference/js/firebase.User
       // const uid = user.uid;
       // console.log(uid);
-      const textodos = document.createElement('h2');
-      textodos.className = 'Nombrebienvenida';
-      textodos.innerHTML = user.email;
-      HomeDiv.appendChild(textodos);
 
-      // ...
-    } else {
-      alert('no usuario');
+      textodos.innerHTML = user.email;
     }
   });
   regresarHome.addEventListener('click', () => onNavigate('/'));
 
   HomeDiv.appendChild(regresarHome);
-
+  HomeDiv.appendChild(textodos);
   return HomeDiv;
 };

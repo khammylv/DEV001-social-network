@@ -19,7 +19,7 @@
     font-weight: 700px;
     font-size: 40px;
     text-align: center;
-    color: white;
+    color: greenyellow;
     /*-webkit-text-stroke: 1px var(--color_borde_bienvenida);*/
     /*text-shadow: var(--sombra_texto_bienvenida);*/
     /*animation-name: moverTitulo;*/
@@ -95,6 +95,10 @@
     border-radius: 30px;
     box-shadow: var(--sombra_boton);
     margin-top: 0px;
+}
+
+.Nombrebienvenida{
+    color: #fb0804;
 }
 
 @keyframes moverTitulo {

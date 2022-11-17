@@ -3,6 +3,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } f
 // eslint-disable-next-line import/no-duplicates
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { app } from './Firebase.js';
+import { modalMensaje } from './modal.js';
 
 // GETUTH
 export const auth = getAuth(app);
@@ -11,10 +12,11 @@ export function formularioregistro(email, password) {
     .then((userCredential) => {
       const user = userCredential.user;
 
-      return user.email;
+      return user;
     })
     .catch((error) => {
-      const errorMessage = error.message;
+      const errorMessage = error.code;
+      modalMensaje(errorMessage);
       return errorMessage;
     });
 }
@@ -24,10 +26,11 @@ export function formularioGoogle() {
   return signInWithPopup(auth, provider)
     .then((result) => {
       const user = result.user;
-      return user.email;
+      return user;
     })
     .catch((error) => {
-      const errorMessage = error.message;
+      const errorMessage = error.code;
+      modalMensaje(errorMessage);
       return errorMessage;
     });
 }
@@ -37,10 +40,11 @@ export function formulariologin(email, password) {
     .then((userCredential) => {
       const user = userCredential.user;
 
-      return user.email;
+      return user;
     })
     .catch((error) => {
-      const errorMessage = error.message;
+      const errorMessage = error.code;
+      modalMensaje(errorMessage);
 
       return errorMessage;
     });

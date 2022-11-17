@@ -1,4 +1,3 @@
-import { validar } from '../lib/validar.js';
 import { formularioregistro, formularioGoogle } from '../lib/index.js';
 
 export const Register = (onNavigate) => {
@@ -80,19 +79,13 @@ export const Register = (onNavigate) => {
   buttonSubmit.type = 'submit';
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const valido = validar(email.value, pass.value);
 
-    if (valido) {
-      formularioregistro(email.value, pass.value).then((res) => {
-        const nombre = res;
-        localStorage.setItem('nombre', nombre);
-        onNavigate('/Begin');
-      }).catch((err) => {
-        const error = err;
-        localStorage.setItem('error', error);
-        onNavigate('/error');
-      });
-    }
+    formularioregistro(email.value, pass.value).then(() => {
+      onNavigate('/Begin');
+      form.reset();
+    }).catch(() => {
+      onNavigate('/Begin');
+    });
   });
 
   buttonGoogle.addEventListener('click', () => {

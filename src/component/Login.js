@@ -1,5 +1,4 @@
 import { formulariologin } from '../lib/index.js';
-import { validar } from '../lib/validar.js';
 
 export const Login = (onNavigate) => {
   const HomeDiv = document.createElement('div');
@@ -71,19 +70,12 @@ export const Login = (onNavigate) => {
   buttonSubmit.type = 'submit';
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const valido = validar(email.value, pass.value);
-
-    if (valido) {
-      formulariologin(email.value, pass.value).then((res) => {
-        const nombre = res;
-        localStorage.setItem('nombre', nombre);
-        onNavigate('/Begin');
-      }).catch((err) => {
-        const error = err;
-        localStorage.setItem('error', error);
-        onNavigate('/error');
-      });
-    }
+    formulariologin(email.value, pass.value).then(() => {
+      onNavigate('/Begin');
+      form.reset();
+    }).catch(() => {
+      onNavigate('/login');
+    });
   });
 
   return HomeDiv;
