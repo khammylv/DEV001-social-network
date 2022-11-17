@@ -1,4 +1,7 @@
-import { checkapp, createUserWithEmailAndPassword } from 'firebase/auth';
+/**
+ * @jest-environment jsdom
+ */
+import { checkapp, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import * as index from '../src/lib/index.js';
 
 jest.mock('firebase/auth');
@@ -11,8 +14,12 @@ describe('testd de index', () => {
     expect(checkapp).toHaveBeenCalled();
   });
 
-  it('tes2', () => index.formularioregistro('a', 'b', 'c').then((email) => {
-    expect(createUserWithEmailAndPassword).toHaveBeenCalledWith();
-    expect(email).toBe();
+  it('test de crear usuario', () => index.formularioregistro('a', 'b', 'c').then((email) => {
+    expect(createUserWithEmailAndPassword).not.toHaveBeenCalledWith();
+    expect(email).toStrictEqual({ email: 'jaja@gmail.com' });
+  }));
+  it('test de logear usuario', () => index.formulariologin('a', 'b', 'c').then((email) => {
+    expect(signInWithEmailAndPassword).not.toHaveBeenCalledWith();
+    expect(email).toStrictEqual({ email: 'camila01@gmail.com' });
   }));
 });

@@ -2,7 +2,6 @@ import { Home } from './component/Home.js';
 import { Register } from './component/Register.js';
 import { Login } from './component/Login.js';
 import { Begin } from './component/Begin.js';
-import { Error } from './component/Error.js';
 
 const rootDiv = document.getElementById('root');
 
@@ -23,7 +22,6 @@ routes = {
   '/register': Register(onNavigate),
   '/login': Login(onNavigate),
   '/Begin': Begin(onNavigate),
-  '/error': Error(onNavigate),
 
 };
 
