@@ -1,4 +1,6 @@
 import { formularioregistro, formularioGoogle } from '../lib/index.js';
+import { Rutas } from '../lib/rutas.js';
+import { modalMensaje } from '../lib/modal.js';
 
 export const Register = (onNavigate) => {
   const HomeDiv = document.createElement('div');
@@ -80,11 +82,11 @@ export const Register = (onNavigate) => {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    formularioregistro(email.value, pass.value).then(() => {
-      onNavigate('/Begin');
+    formularioregistro(email.value, pass.value).then((res) => {
+      onNavigate(Rutas(res));
       form.reset();
-    }).catch(() => {
-      onNavigate('/Begin');
+    }).catch((err) => {
+      modalMensaje(err);
     });
   });
 

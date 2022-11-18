@@ -16,3 +16,6 @@ export const signInWithEmailAndPassword = jest.fn().mockResolvedValue({
 });
 
 export const onAuthStateChanged = jest.fn();
+export const signInWithPopup = jest.fn().mockResolvedValue({
+  user: { email: 'camila55@gmail.com' },
+});

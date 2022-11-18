@@ -23,7 +23,6 @@ export const Begin = (onNavigate) => {
   buttonlogout.addEventListener('click', (e) => {
     e.preventDefault();
     auth.signOut().then(() => {
-      console.log('sign out');
       onNavigate('/');
     });
   });
@@ -65,7 +64,6 @@ export const Begin = (onNavigate) => {
   textodos.className = 'Nombrebienvenida';
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      console.log(user);
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
       // const uid = user.uid;
