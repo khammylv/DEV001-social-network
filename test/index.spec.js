@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 import {
   checkapp, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup,
 } from 'firebase/auth';

@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 import { Register } from '../src/component/Register.js';
 import { Begin } from '../src/component/Begin.js';
 import { Login } from '../src/component/Login.js';

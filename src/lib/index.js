@@ -15,7 +15,7 @@ export function formularioregistro(email, password) {
     })
     .catch((error) => {
       const errorMessage = error.code;
-
+      console.log(errorMessage);
       return errorMessage;
     });
 }
@@ -29,7 +29,7 @@ export function formularioGoogle() {
     })
     .catch((error) => {
       const errorMessage = error.code;
-
+      console.log(errorMessage);
       return errorMessage;
     });
 }
