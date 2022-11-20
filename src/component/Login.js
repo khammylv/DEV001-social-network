@@ -1,4 +1,6 @@
 import { formulariologin } from '../lib/index.js';
+import { Rutas } from '../lib/rutas.js';
+import { modalMensaje } from '../lib/modal.js';
 
 export const Login = (onNavigate) => {
   const HomeDiv = document.createElement('div');
@@ -70,11 +72,11 @@ export const Login = (onNavigate) => {
   buttonSubmit.type = 'submit';
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    formulariologin(email.value, pass.value).then(() => {
-      onNavigate('/Begin');
+    formulariologin(email.value, pass.value).then((res) => {
+      onNavigate(Rutas(res));
       form.reset();
-    }).catch(() => {
-      onNavigate('/login');
+    }).catch((err) => {
+      modalMensaje(err);
     });
   });
 

@@ -4,6 +4,7 @@ import { initializeApp } from 'firebase/app';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
   apiKey: 'AIzaSyDxO294UxeqNXv8yLW1xdKhXZEEeWDGvWo',
   authDomain: 'lymusic-1dfa8.firebaseapp.com',
