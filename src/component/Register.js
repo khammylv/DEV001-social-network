@@ -6,6 +6,7 @@ import { modalMensaje } from '../lib/modal.js';
 export const Register = (onNavigate) => {
   const HomeDiv = document.createElement('div');
   HomeDiv.className = 'divPadre';
+
   const divBoton = document.createElement('div');
   divBoton.className = 'botonRegreso';
   HomeDiv.appendChild(divBoton);
@@ -14,12 +15,14 @@ export const Register = (onNavigate) => {
   buttonHome.classList = 'btn_home_registro';
   divBoton.appendChild(buttonHome);
   buttonHome.addEventListener('click', () => onNavigate('/'));
+
   const divBienvenida = document.createElement('div');
   HomeDiv.appendChild(divBienvenida);
   const mensajeBienvenida = document.createElement('h2');
   mensajeBienvenida.textContent = 'Welcome to lymusic';
   divBienvenida.appendChild(mensajeBienvenida);
   divBienvenida.className = 'mensajeBienvenida';
+
   const form = document.createElement('form');
   const divForm = document.createElement('div');
   HomeDiv.appendChild(form);
