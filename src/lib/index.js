@@ -1,4 +1,5 @@
-// eslint-disable-next-line import/no-duplicates
+/* eslint-disable import/no-unresolved */
+// eslint-disable-next-line import/no-duplicates, import/no-unresolved
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 // eslint-disable-next-line import/no-duplicates
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';

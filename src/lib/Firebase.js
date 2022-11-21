@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { initializeApp } from 'firebase/app';
 
 // TODO: Add SDKs for Firebase products that you want to use

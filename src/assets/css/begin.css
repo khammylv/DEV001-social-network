@@ -6,26 +6,20 @@
     text-align: center;
     width: 100%;
     height: 100%;
-    padding-top: 60px;
-    background-image: linear-gradient(120deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%), url(../img/sinFondo.png);
+    background-image: linear-gradient(120deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url(../img/sinFondo.png);
     background-attachment: fixed;
     background-position: center;
 }
 
 .texto_bienvenida {
-    height: 100px;
-    text-transform: uppercase;
-    margin: 20px;
-    font-weight: 700px;
+    font-family: 'Libre Baskerville', serif;
+    color: white;
+    display: inline-block;
     font-size: 40px;
-    text-align: center;
-    color: greenyellow;
-    /*-webkit-text-stroke: 1px var(--color_borde_bienvenida);*/
-    /*text-shadow: var(--sombra_texto_bienvenida);*/
-    /*animation-name: moverTitulo;*/
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+    align-items: flex-end;
+}
+.caja0{
+    display: flex;
 }
 
 .cajas {
@@ -39,7 +33,18 @@
     flex-wrap: wrap;
 }
 
-.novedades {
+.cajas2 {
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -100px;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.podcasts {
 
     padding: 20px;
     background-color: #f16c07;
@@ -48,7 +53,7 @@
     width: 160px;
 }
 
-.genero {
+.new {
 
     padding: 20px;
     background-color: #fb0804;
@@ -84,9 +89,18 @@
     font-size: 30px;
 }
 
+.play {
+    width: 170px;
+    height: 170px;
+    background: transparent;
+    border-radius: 90px;
+    box-shadow: 5px 5px 17px #999;
+    margin-bottom: 40px;
+}
 
-.btn_regresar {
-    margin-bottom: 70px;
+
+/*.btn_regresar {
+    margin-bottom: 20px;
     padding: 5px;
     cursor: pointer;
     width: 50px;
@@ -95,9 +109,15 @@
     border-radius: 30px;
     box-shadow: var(--sombra_boton);
     margin-top: 0px;
+}*/
+.update {
+    color: white;
+    font-size: 10px;
+    margin: 5px;
+    text-decoration: underline;
 }
 
-.Nombrebienvenida{
+.Nombrebienvenida {
     color: #fb0804;
 }
 
@@ -141,7 +161,45 @@
     box-shadow: var(--sombra_boton);
 }
 
-.imgProfile{
-width: 50px;
-height: 50px;
+.imgProfile {
+    width: 50px;
+    height: 50px;
+}
+
+.btn_logout {
+    padding: 2px;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    justify-content: center;
+    margin: auto;
+    border-radius: 10px;
+    background: var(--color_oscuro_boton_formulario);
+    color: var(--color_claro_boton_formulario);
+    box-shadow: var(--sombra_boton);
+    display: inline-block;
+    top: 10px;
+    right: 10px;
+    position: fixed;
+}
+
+.btn_logout:active {
+    background-color: var(--color_oscuro_boton_formulario);
+    box-shadow: var(--sombra_boton_active);
+    transform: translateY(4px);
+}
+
+.btn_logout:hover {
+    color: #0e0f0e;
+    background-color: var(--color_boton_form_hover);
+}
+
+.btn_cerrar {
+    outline: none;
+    border: none;
+    background: var(--color_oscuro_boton_formulario);
+    color: white;
+    font-size: 17px;
+    text-align: center;
+    padding-top: 8px;
 }
