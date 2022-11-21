@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { formularioregistro, formularioGoogle } from '../lib/index.js';
 import { Rutas } from '../lib/rutas.js';
 import { modalMensaje } from '../lib/modal.js';
@@ -43,17 +44,29 @@ export const Register = (onNavigate) => {
   const labelPass = document.createElement('label');
   labelPass.textContent = 'Password';
   labelPass.classList = 'label_pass';
+
   const buttonSubmit = document.createElement('button');
-  buttonSubmit.textContent = 'sign up';
+  buttonSubmit.textContent = 'SIGN UP';
   buttonSubmit.classList = 'btn_formulario_registro';
+  buttonSubmit.type = 'button';
+
+  const imagenEmail = document.createElement('img');
+  imagenEmail.classList = 'email_img';
+  imagenEmail.src = '../assets/img/email.png';
+  imagenEmail.alt = 'imagen de email';
+  buttonSubmit.appendChild(imagenEmail);
+
   const buttonGoogle = document.createElement('button');
   buttonGoogle.classList = 'btn_google';
   buttonGoogle.type = 'button';
+  buttonGoogle.textContent = 'SIGN UP WITH GOOGLE';
+
   const imagenGoogle = document.createElement('img');
   imagenGoogle.classList = 'google_img';
-  imagenGoogle.src = '../assets/img/cromo.png';
+  imagenGoogle.src = '../assets/img/cromo5.png';
   imagenGoogle.alt = 'imagen de google';
   buttonGoogle.appendChild(imagenGoogle);
+
   const spanPass = document.createElement('label');
   spanPass.textContent = '👀';
   spanPass.className = 'ojito_registro';

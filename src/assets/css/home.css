@@ -1,33 +1,49 @@
 .cont_home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     height: 100%;
     text-align: right;
+    padding: 10px;
+    margin-bottom: 3rem;
 }
 
 .logo_home {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 60%;
     margin: auto;
-    -webkit-box-reflect: below -520px
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+    /*    -webkit-box-reflect: below -520px
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));*/
 }
 
 .logoimagen {
     width: 100%;
     height: 60%;
+}
 
+.logoimagenrepeat {
+    width: 100%;
+    height: 60%;
+    margin-top: -200px;
+    opacity: 0.4;
+}
+
+.logopc {
+    width: 0%;
+    height: 0%;
 }
 
 .letraLogo {
     font-family: 'Libre Baskerville', serif;
-    font-weight: 700;
-    margin-top: 30px;
-    margin-right: 50px;
+    margin-top: 70px;
     color: white;
     display: inline-block;
     font-size: 40px;
+    align-items: flex-end;
 }
-
 
 .botonregistro {
     cursor: pointer;
@@ -63,48 +79,118 @@
     align-items: center;
 
 }
-/*medida para tablet*/
-@media (min-width: 600px) and (max-width: 767px){
-.logo_home{
-    -webkit-box-reflect: below -580px
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
-}
-.botonregistro {
-    width: 350px;
-    height: 50px;
-    font-size: 25px; 
-}
 
-.botoniniciosesion {
-    width: 350px;
-    height: 50px;
-    font-size: 25px;
-}
+/*medida para tablet*/
+@media (min-width: 600px) and (max-width: 767px) {
+ 
+
+    .logoimagen {
+        width: 0px;
+    }
+
+    .logoimagenrepeat {
+        width: 0px;
+    }
+
+    .cont_home {
+        padding-top: 60px;
+        background-image: linear-gradient(120deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%), url(../img/sinFondo.png);
+        background-attachment: fixed;
+        background-position: center;
+    }
+
+    .logopc {
+        width: 300PX;
+        height: 300px;
+        margin-top: -300px;
+        display: block;
+        margin-left: auto;
+        opacity: 0.9;
+    }
+
+    .botonregistro {
+        width: 350px;
+        height: 50px;
+        font-size: 25px;
+    }
+
+    .botoniniciosesion {
+        width: 350px;
+        height: 50px;
+        font-size: 25px;
+    }
 
 }
 
 /*medida para PC*/
-@media only screen and (min-width: 768px){
+@media (min-width: 768px) and (max-width: 2559px) {
     .botonregistro {
         width: 350px;
         height: 60px;
         font-size: 25px;
     }
+
+    .letraLogo {
+        font-family: 'Libre Baskerville', serif;
+        font-weight: 700;
+        margin-top: 40px;
+        margin-right: 50px;
+        color: white;
+        display: inline-block;
+        font-size: 60px;
+    }
+
+    .logoimagen {
+        width: 0px;
+    }
+
+    .logoimagenrepeat {
+        width: 0px;
+    }
+
+    .cont_home {
+
+        padding-top: 60px;
+        background-image: linear-gradient(120deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%), url(../img/sinFondo.png);
+        background-attachment: fixed;
+        background-position: center;
+    }
+
+    .logopc {
+        width: 400px;
+        height: 400px;
+        margin-top: -400px;
+        display: block;
+        margin-left: auto;
+    }
+
     .botoniniciosesion {
         width: 350px;
         height: 60px;
         font-size: 25px;
     }
-    .logo_home {
-        -webkit-box-reflect: below -580px
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
-            
-    }
-  
+
+
 }
-@media (min-width: 1320px) {
-    .logo_home {
-        -webkit-box-reflect: below -410px 
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+
+@media (min-width: 2560px) {
+    .logoimagen {
+        width: 0px;
+    }
+
+    .logoimagenrepeat {
+        width: 0px;
+    }
+    .logopc{
+        width: 0px;
+    }
+
+    .botonregistro {
+
+        margin-top: -250px;
+
+    }
+    .letraLogo {
+margin-right: 85px;
     }
 }

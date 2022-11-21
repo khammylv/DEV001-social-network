@@ -14,7 +14,17 @@ export const Home = (onNavigate) => {
   imagen.src = '../assets/img/sinFondo.png';
   imagen.alt = 'logoimagen';
   imagen.classList = 'logoimagen';
+  const imagen2 = document.createElement('img');
+  imagen2.src = '../assets/img/sinFondo.png';
+  imagen2.alt = 'logoimagen2';
+  imagen2.classList = 'logoimagenrepeat';
+  const imagen3 = document.createElement('img');
+  imagen3.src = '../assets/img/music.png';
+  imagen3.alt = 'logopc';
+  imagen3.classList = 'logopc';
   divLogo.appendChild(imagen);
+  divLogo.appendChild(imagen2);
+  divLogo.appendChild(imagen3);
   const divBotones = document.createElement('div');
   divBotones.className = 'divBotones';
   buttonRegister.textContent = 'Register';

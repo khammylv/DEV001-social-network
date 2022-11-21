@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../lib/index.js';
 
@@ -5,9 +6,15 @@ export const Begin = (onNavigate) => {
   const HomeDiv = document.createElement('div');
   console.log(window.location.pathname);
   HomeDiv.className = 'bienvenida';
+
+  const form0 = document.createElement('form');
+  const divForm0 = document.createElement('div');
+  HomeDiv.appendChild(form0);
+  form0.appendChild(divForm0);
   const divBoton = document.createElement('div');
   divBoton.className = 'botonAtras';
-  HomeDiv.appendChild(divBoton);
+  divForm0.appendChild(divBoton);
+  divForm0.className = 'botonAtras';
   const buttonHome3 = document.createElement('button');
   buttonHome3.textContent = '«';
   buttonHome3.classList = 'btn_atras';
@@ -16,9 +23,9 @@ export const Begin = (onNavigate) => {
   // boton para cierre sesion
   const divBotoncerrar = document.createElement('div');
   divBotoncerrar.className = 'btn_logout';
-  HomeDiv.appendChild(divBotoncerrar);
+  divForm0.appendChild(divBotoncerrar);
   const buttonlogout = document.createElement('button');
-  buttonlogout.textContent = 'logout';
+  buttonlogout.textContent = 'Logout';
   buttonlogout.classList = 'btn_cerrar';
   divBotoncerrar.appendChild(buttonlogout);
   buttonlogout.addEventListener('click', (e) => {
@@ -27,48 +34,24 @@ export const Begin = (onNavigate) => {
       onNavigate('/');
     });
   });
+  divForm0.className = 'caja0';
 
-  const textoBienvenida = document.createElement('h1');
-  textoBienvenida.textContent = 'Welcome to Lymusic';
-  textoBienvenida.classList = 'texto_bienvenida';
-  HomeDiv.appendChild(textoBienvenida);
-  const form = document.createElement('form');
-  const divForm = document.createElement('div');
-  HomeDiv.appendChild(form);
-  form.appendChild(divForm);
-  const opcion1 = document.createElement('p');
-  opcion1.textContent = 'Novedades';
-  divForm.appendChild(opcion1);
-  opcion1.classList = 'novedades';
-  const opcion2 = document.createElement('p');
-  opcion2.textContent = 'Géneros musicales';
-  divForm.appendChild(opcion2);
-  opcion2.classList = 'genero';
-  const opcion3 = document.createElement('p');
-  opcion3.textContent = 'Play List Populares';
-  divForm.appendChild(opcion3);
-  opcion3.classList = 'populares';
-  const opcion4 = document.createElement('p');
-  opcion4.textContent = 'Artistas';
-  divForm.appendChild(opcion4);
-  opcion4.classList = 'artistas';
-  divForm.className = 'cajas';
-  const textoCuerpo = document.createElement('p');
-  textoCuerpo.textContent = 'Desconéctate del mundo y conéctate con la música';
-  textoCuerpo.classList = 'parrafo_publicacion';
-  HomeDiv.appendChild(textoCuerpo);
-  const regresarHome = document.createElement('img');
-  regresarHome.classList = 'btn_regresar';
-  regresarHome.src = '../assets/img/casa.webp';
-  regresarHome.alt = 'imagen casita';
-  const textodos = document.createElement('h2');
-  textodos.className = 'Nombrebienvenida';
-  textodos.innerHTML = '';
+  const form2 = document.createElement('form');
+  const divForm2 = document.createElement('div');
+  HomeDiv.appendChild(form2);
+  form2.appendChild(divForm2);
+
   const imgProfile = document.createElement('img');
   imgProfile.className = 'imgProfile';
+  divForm2.appendChild(imgProfile);
   if (window.location.pathname !== '/Begin') {
     console.log('cambio');
   }
+
+  const textodos = document.createElement('h2');
+  textodos.className = 'Nombrebienvenida';
+  textodos.innerHTML = '';
+  divForm2.appendChild(textodos);
   onAuthStateChanged(auth, (user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
@@ -94,12 +77,47 @@ export const Begin = (onNavigate) => {
       }
     }
   });
+  const updateData = document.createElement('h2');
+  updateData.textContent = 'Update your information';
+  updateData.classList = 'update';
+  divForm2.appendChild(updateData);
+  updateData.addEventListener('click', () => onNavigate('/profile'));
+  // HomeDiv.appendChild(imgProfile);
+  // HomeDiv.appendChild(textodos);
+  divForm2.className = 'cajas2';
 
-  regresarHome.addEventListener('click', () => onNavigate('/profile'));
+  const play = document.createElement('img');
+  play.classList = 'play';
+  play.src = '../assets/img/jugar2.png';
+  play.alt = 'imagen play';
 
-  HomeDiv.appendChild(regresarHome);
-  HomeDiv.appendChild(textodos);
-  HomeDiv.appendChild(imgProfile);
+  HomeDiv.appendChild(play);
+
+  const form = document.createElement('form');
+  const divForm = document.createElement('div');
+  HomeDiv.appendChild(form);
+  form.appendChild(divForm);
+  const opcion1 = document.createElement('p');
+  opcion1.textContent = 'Podcasts';
+  divForm.appendChild(opcion1);
+  opcion1.classList = 'podcasts';
+  const opcion2 = document.createElement('p');
+  opcion2.textContent = 'New Releases';
+  divForm.appendChild(opcion2);
+  opcion2.classList = 'new';
+  const opcion3 = document.createElement('p');
+  opcion3.textContent = 'Popular Play List';
+  divForm.appendChild(opcion3);
+  opcion3.classList = 'populares';
+  const opcion4 = document.createElement('p');
+  opcion4.textContent = 'Artists';
+  divForm.appendChild(opcion4);
+  opcion4.classList = 'artistas';
+  divForm.className = 'cajas';
+  // const textoCuerpo = document.createElement('p');
+  // textoCuerpo.textContent = 'Desconéctate del mundo y conéctate con la música';
+  // textoCuerpo.classList = 'parrafo_publicacion';
+  // HomeDiv.appendChild(textoCuerpo);
 
   return HomeDiv;
 };
