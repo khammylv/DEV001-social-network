@@ -20,7 +20,7 @@ export const Begin = (onNavigate) => {
   buttonHome3.className = 'btn_atras';
   divBoton.appendChild(buttonHome3);
   buttonHome3.addEventListener('click', () => onNavigate('/login'));
-  // boton para cierre sesion
+  // boton para cierre sesionr
   const divBotoncerrar = document.createElement('div');
   divBotoncerrar.className = 'btn_logout';
   divForm0.appendChild(divBotoncerrar);
