@@ -7,7 +7,7 @@ export const Begin = (onNavigate) => {
   console.log(window.location.pathname);
   HomeDiv.className = 'bienvenida';
 
-  const form0 = document.createElement('form');
+  const form0 = document.createElement('div');
   const divForm0 = document.createElement('div');
   HomeDiv.appendChild(form0);
   form0.appendChild(divForm0);
@@ -17,7 +17,7 @@ export const Begin = (onNavigate) => {
   divForm0.className = 'botonAtras';
   const buttonHome3 = document.createElement('button');
   buttonHome3.textContent = '«';
-  buttonHome3.classList = 'btn_atras';
+  buttonHome3.className = 'btn_atras';
   divBoton.appendChild(buttonHome3);
   buttonHome3.addEventListener('click', () => onNavigate('/login'));
   // boton para cierre sesion
@@ -26,8 +26,8 @@ export const Begin = (onNavigate) => {
   divForm0.appendChild(divBotoncerrar);
   const buttonlogout = document.createElement('button');
   buttonlogout.textContent = 'Logout';
-  buttonlogout.classList = 'btn_cerrar';
-  divBotoncerrar.appendChild(buttonlogout);
+  buttonlogout.className = 'btn_cerrar';
+  divForm0.appendChild(buttonlogout);
   buttonlogout.addEventListener('click', (e) => {
     e.preventDefault();
     auth.signOut().then(() => {
@@ -36,7 +36,7 @@ export const Begin = (onNavigate) => {
   });
   divForm0.className = 'caja0';
 
-  const form2 = document.createElement('form');
+  const form2 = document.createElement('div');
   const divForm2 = document.createElement('div');
   HomeDiv.appendChild(form2);
   form2.appendChild(divForm2);
@@ -93,7 +93,7 @@ export const Begin = (onNavigate) => {
 
   HomeDiv.appendChild(play);
 
-  const form = document.createElement('form');
+  const form = document.createElement('div');
   const divForm = document.createElement('div');
   HomeDiv.appendChild(form);
   form.appendChild(divForm);
