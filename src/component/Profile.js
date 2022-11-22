@@ -1,7 +1,7 @@
 import { updateProfile, onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../lib/index.js';
 import { Rutas } from '../lib/rutas.js';
-
+// updateProfile,
 export const Profile = (onNavigate) => {
   const HomeDiv = document.createElement('div');
   HomeDiv.className = 'divPadrePerfil';
@@ -22,8 +22,18 @@ export const Profile = (onNavigate) => {
   form.appendChild(labelNombre);
   form.appendChild(imgPerfil);
   form.appendChild(buttonSubmit);
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log(nombre.value);
+    console.log(imgPerfil.value);
+  });
+
   onAuthStateChanged(auth, (user) => {
     if (user) {
+      if (user !== null) {
+        console.log(user);
+        console.log('dentro de profile');
+      }
       console.log(user);
       nombre.value = user.displayName;
       imgPerfil.value = user.photoURL;
@@ -31,8 +41,8 @@ export const Profile = (onNavigate) => {
   });
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log(nombre.value);
-    console.log(imgPerfil.value);
+    // console.log(nombre.value);
+    // console.log(imgPerfil.value);
     updateProfile(auth.currentUser, {
       displayName: nombre.value, photoURL: imgPerfil.value,
     }).then(() => {
