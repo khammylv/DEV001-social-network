@@ -4,6 +4,7 @@ import { auth, createPost, llamarTareas } from '../lib/index.js';
 
 export const Begin = (onNavigate) => {
   const HomeDiv = document.createElement('div');
+
   /* ESTO ES LA CREACION DEL HEADER */
   const headerMenu = document.createElement('header');
   headerMenu.className = 'header_menu';
