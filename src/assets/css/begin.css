@@ -1,209 +1,224 @@
-.bienvenida {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+.bienvenida{
     width: 100%;
-    height: 100%;
-    background-image: linear-gradient(120deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url(../img/sinFondo.png);
-    background-attachment: fixed;
-    background-position: center;
+    height: 40%;
+   
 }
 
-.texto_bienvenida {
-    font-family: 'Libre Baskerville', serif;
-    color: white;
-    display: inline-block;
-    font-size: 40px;
-    align-items: flex-end;
-}
-.caja0{
-    display: flex;
-    flex-direction: column;
-    background-color: red;
+.contenedorMenu{
     width: 100%;
-    height: 100%;
+    height: 80px;
+    background: #80ffdb;
+    
 }
 
-.cajas {
+.headerPerfil{
+    padding-top: 5px;
+    width: 80%;
     display: flex;
-    color: white;
-    padding: 20px;
-    margin: 10px;
-    font-size: 20px;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.cajas2 {
     margin: auto;
-    padding: 20px;
+    justify-content: space-between;
+}
+
+.nombrePerfil{
     display: flex;
-    flex-direction: column;
+    padding-right: 15px;
+    text-align: center;
     align-items: center;
-    margin-top: -100px;
-    position: relative;
-    margin-bottom: 40px;
-}
-
-.podcasts {
-
-    padding: 20px;
-    background-color: #f16c07;
-    border-radius: 10px;
-    height: 100px;
-    width: 160px;
-}
-
-.new {
-
-    padding: 20px;
-    background-color: #fb0804;
-    border-radius: 10px;
-    height: 100px;
-    width: 160px;
-    align-content: center;
-}
-
-.populares {
-
-    padding: 20px;
-    background-color: #ff00c8;
-    border-radius: 10px;
-    height: 100px;
-    width: 160px;
-    align-content: center;
-}
-
-.artistas {
-
-    padding: 20px;
-    background-color: #88047f;
-    border-radius: 10px;
-    height: 100px;
-    width: 160px;
-    align-content: center;
-}
-
-.parrafo_publicacion {
-    color: white;
-    margin: 60px;
     font-size: 30px;
+    color: #ff0a54;
+  }
+  
+.foto{
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin-left: 10px;
 }
 
-.play {
-    width: 170px;
-    height: 170px;
-    background: transparent;
-    border-radius: 90px;
-    box-shadow: 5px 5px 17px #999;
-    margin-bottom: 40px;
-}
-
-
-/*.btn_regresar {
-    margin-bottom: 20px;
-    padding: 5px;
+/* Centra el input personalizado con el texto */
+.iconoMenu {
+    margin-top: 10px;
+    align-items: center;
     cursor: pointer;
-    width: 50px;
-    height: 50px;
-    border: none;
-    border-radius: 30px;
-    box-shadow: var(--sombra_boton);
-    margin-top: 0px;
-}*/
-.update {
-    color: white;
-    font-size: 10px;
-    margin: 5px;
-    text-decoration: underline;
+    
+    
 }
 
-.Nombrebienvenida {
-    color: #fb0804;
+/* Modificador para dar la imagen de checkbox */
+.checkmenuImg {
+    
+    background-image: url(../img/menu.png);
 }
 
-@keyframes moverTitulo {
-    0% {
-        transform: scale(0.9)
-    }
-
-    100% {
-        transform: scale(1.1)
-    }
+/* Oculta input original */
+.iconoMenu > .checkmenu {
+    display: none;
 }
 
-.botonAtras {
+/* Radio personalizado usando <span> */
+.iconoMenu > .imgMenu {
     display: inline-block;
-    top: 0;
-    left: 0;
-    position: fixed;
-}
-
-.btn_atras {
-    padding: 2px;
-    cursor: pointer;
     width: 50px;
-    height: 45px;
-    font-size: 40px;
+    height: 50px;
+    background-size: cover;
+}
+
+/* Cambia el checkbox personalizado cuando es pulsado */
+.iconoMenu > .checkmenu:checked + .checkmenuImg {
+    background-image: url(../img/close.png);
+}
+
+.asideMenu{
+    width: 30%;
+    height: 500px;
+    background: #48bfe3;
+    display: none;
+    transition: all 300ms ease;
+    z-index: 10px;
+    position:fixed;
+}
+
+.asideMenu .listasMenu a{ 
+    font-size:20px ;
+    color:white;
+    /*Se usa el display block para que el enlace respete el margin*/
+    display: block;
+    padding:20px;
+    text-transform: uppercase;
+ }
+.asideMenu .listasMenu li{
+    padding-top: 30px;
+    padding-left: 15px;
+    width:100%;
+    font-size:20px;
+        
+ }
+
+ .asideMenu .listasMenu li:last-child{
+    align-items: flex-end;
+   
     border: none;
-    border-radius: 10px;
-    background: transparent;
-    color: #fae0e4;
-}
-
-.btn_atras:active {
-    background-color: transparent;
-    transform: translateY(4px);
-}
-
-.btn_atras:hover {
-    color: var(--color_boton_claro_regreso_hover);
-    background-color: var(--color_boton_oscuro_regreso_hover);
-    box-shadow: var(--sombra_boton);
-}
-
-.imgProfile {
+ }
+ .asideMenu .listasMenu a:hover{ 
+    font-size: 20px;
+    padding: 30px 0px; 
+    background: #7400b8;
+    text-transform: uppercase;  
+ }
+.iconoSalir{
     width: 50px;
     height: 50px;
 }
 
-.btn_logout {
-    padding: 2px;
-    cursor: pointer;
-    width: 100px;
-    height: 40px;
-    justify-content: center;
+ .cajapost{
+    width: 80%;
+ 
     margin: auto;
-    border-radius: 10px;
-    background: var(--color_oscuro_boton_formulario);
-    color: var(--color_claro_boton_formulario);
-    box-shadow: var(--sombra_boton);
-    display: inline-block;
-    top: 10px;
-    right: 10px;
-    position: fixed;
+    padding-top: 50px;
+   
+}
+.cardCont{
+    width: 450px;
+    height: 300px;
+    padding-top: 15px;
+    background: white;
+    margin: auto;
 }
 
-.btn_logout:active {
-    background-color: var(--color_oscuro_boton_formulario);
-    box-shadow: var(--sombra_boton_active);
-    transform: translateY(4px);
+.cajaPost{
+    width: 90%;
+    height: 80%;
+    margin:auto;
+    overflow: hidden;
+    border-radius: 5px;
 }
 
-.btn_logout:hover {
-    color: #0e0f0e;
-    background-color: var(--color_boton_form_hover);
+.cajaText{
+    resize: none;
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    background-color: #fff0f3;
+   
+}
+.cajaIcon{
+    width: 90%;
+    height: 15%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 5px;
+
+}
+.btnDelete{
+   margin-right: 5px;
+   border: none;
+   font-size: 30px;
+   align-items: center;
+   padding-top: 5px;
+   cursor: pointer;
+   color: #ff0000;
+   background: white;
+   border-radius: 3px;
 }
 
-.btn_cerrar {
-    outline: none;
+.btnEdit{
     border: none;
-    background: var(--color_oscuro_boton_formulario);
-    color: white;
-    font-size: 17px;
-    text-align: center;
-    padding-top: 8px;
+    font-size: 30px;
+    align-items: center;
+    padding-top: 5px;
+    cursor: pointer;
+    background: white;
+    border-radius: 3px;
+    color: #7400b8;
 }
+
+.sectionBody{
+    width: 80%;
+ 
+    margin: auto;
+    padding-top: 50px;
+   
+}
+
+.formPost{
+    width: 450px;
+    height: 300px;
+    padding-top: 15px;
+    background: white;
+    margin: auto;
+}
+
+.cajatextform{
+    width: 90%;
+    height: 80%;
+    margin:auto;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.textoPost{
+    resize: none;
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    background-color: #fff0f3;
+}
+
+.cajabtn{
+    width: 90%;
+    height: 15%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 5px;
+}
+.botonPost{
+    width: 100px;
+    height: 30px;
+    border: none;
+    background:var(--color_boton_form_hover);
+}
+
+

@@ -3,7 +3,10 @@
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 // eslint-disable-next-line import/no-duplicates
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import { app } from './Firebase.js';
+import {
+  collection, addDoc, getDocs, onSnapshot,
+} from 'firebase/firestore';
+import { app, db } from './Firebase.js';
 
 // GETUTH
 export const auth = getAuth(app);
@@ -48,3 +51,18 @@ export function formulariologin(email, password) {
       return errorMessage;
     });
 }
+
+export const createPost = (postUs, idUs) => addDoc(collection(db, 'postMusic'), {
+  post: postUs,
+  id: idUs,
+}).then((respuesta) => {
+  console.log('Document written with ID: ', respuesta);
+  return respuesta;
+}).catch((err) => {
+  console.error('Error adding document: ', err.message);
+  return err.code;
+});
+
+export const getTasks = () => getDocs(collection(db, 'postMusic'));
+
+export const llamarTareas = (callback) => onSnapshot(collection(db, 'postMusic'), callback);
