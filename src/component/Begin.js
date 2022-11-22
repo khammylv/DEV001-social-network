@@ -1,4 +1,3 @@
-
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth, createPost, llamarTareas } from '../lib/index.js';
 
