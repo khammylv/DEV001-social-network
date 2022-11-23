@@ -5,21 +5,33 @@ import { Rutas } from '../lib/rutas.js';
 export const Profile = (onNavigate) => {
   const HomeDiv = document.createElement('div');
   HomeDiv.className = 'divPadrePerfil';
+
   const form = document.createElement('form');
+  form.className = 'form_perfil';
+
   HomeDiv.appendChild(form);
   const nombre = document.createElement('input');
+  nombre.className = 'nombre_input';
   nombre.type = 'text';
   nombre.placeholder = 'Name';
   const labelNombre = document.createElement('label');
+  labelNombre.innerText = 'Nombre';
+  labelNombre.className = 'nombre_label';
+  const labelUrl = document.createElement('label');
+  labelUrl.innerText = 'URL';
+  labelUrl.className = 'label_url';
   const buttonSubmit = document.createElement('button');
   buttonSubmit.type = 'submit';
-  buttonSubmit.textContent = 'enviar';
+  buttonSubmit.textContent = 'Enviar';
+  buttonSubmit.className = 'btn_submit';
   const imgPerfil = document.createElement('input');
-  imgPerfil.type = 'text';
+  imgPerfil.type = 'url';
+  imgPerfil.className = 'url_foto';
   // let nombreCambio = '';
   //  let fotoCambio = '';
-  form.appendChild(nombre);
   form.appendChild(labelNombre);
+  form.appendChild(nombre);
+  form.appendChild(labelUrl);
   form.appendChild(imgPerfil);
   form.appendChild(buttonSubmit);
   form.addEventListener('submit', (e) => {

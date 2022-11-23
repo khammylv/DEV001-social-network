@@ -1,0 +1,86 @@
+.divPadrePerfil {
+    background-image: linear-gradient(120deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%), url(../img/sinFondo.png);
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.form_perfil {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nombre_label {
+    height: 100%;
+    width: 100%;
+    padding: 50px;
+    
+}
+
+.divPadrePerfil {
+    height: 100%;
+    width: 100%;
+    padding: 50px;
+    
+
+}
+
+.label_url {
+
+    height: 100%;
+    width: 100%;
+    padding: 50px;
+}
+
+.nombre_input {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    height: 30px;
+    padding: 5px;  
+    background: white
+}
+
+.nombre_label {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    height: 30px;
+    padding: 5px;  
+    background: white
+}
+
+.label_url {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    height: 30px;
+    padding: 5px;  
+    background: white
+}
+ .btn_submit {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    height: 30px;
+    padding: 5px;  
+    background: white
+ }
+   
+ .url_foto{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    height: 30px;
+    padding: 5px;  
+    background: white
+ }

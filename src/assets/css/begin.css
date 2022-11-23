@@ -29,10 +29,10 @@
   }
   
 .foto{
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      margin-left: 10px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-left: 10px;
 }
 
 /* Centra el input personalizado con el texto */
