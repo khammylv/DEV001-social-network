@@ -1,5 +1,6 @@
+/* eslint-disable import/no-unresolved */
 import { onAuthStateChanged } from 'firebase/auth';
-import { auth, createPost, llamarTareas} from '../lib/index.js';
+import { auth, createPost, llamarTareas } from '../lib/index.js';
 
 export const Begin = (onNavigate) => {
   const HomeDiv = document.createElement('div');

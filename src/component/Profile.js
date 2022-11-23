@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { updateProfile, onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../lib/index.js';
 import { Rutas } from '../lib/rutas.js';
@@ -34,7 +35,7 @@ export const Profile = (onNavigate) => {
   const imgPerfil = document.createElement('input');
   imgPerfil.type = 'url';
   imgPerfil.className = 'url_foto';
-  imgPerfil.placeholder = 'Enter the URL of your image'
+  imgPerfil.placeholder = 'Enter the URL of your image';
   // let nombreCambio = '';
   //  let fotoCambio = '';
   form.appendChild(labelNombre);
