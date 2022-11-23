@@ -38,10 +38,10 @@
 
 .letraLogo {
     font-family: 'Libre Baskerville', serif;
-    margin-top: 70px;
+    margin-top: 90px;
     color: white;
     display: inline-block;
-    font-size: 40px;
+    font-size: 60px;
     align-items: flex-end;
 }
 
@@ -49,7 +49,7 @@
     cursor: pointer;
     width: 300px;
     height: 40px;
-    font-size: 17px;
+    font-size: 20px;
     border: none;
     border-radius: 10px;
     margin-bottom: 30px;
@@ -62,7 +62,7 @@
     cursor: pointer;
     width: 300px;
     height: 40px;
-    font-size: 17px;
+    font-size: 20px;
     border: none;
     border-radius: 10px;
     background: #680da4;
@@ -83,53 +83,18 @@
 /*medida para tablet*/
 @media (min-width: 600px) and (max-width: 767px) {
  
-
-    .logoimagen {
-        width: 0px;
-    }
-
-    .logoimagenrepeat {
-        width: 0px;
-    }
-
-    .cont_home {
-        padding-top: 60px;
-        background-image: linear-gradient(120deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%), url(../img/sinFondo.png);
-        background-attachment: fixed;
-        background-position: center;
-    }
-
-    .logopc {
-        width: 300PX;
-        height: 300px;
-        margin-top: -300px;
-        display: block;
-        margin-left: auto;
-        opacity: 0.9;
-    }
-
-    .botonregistro {
-        width: 350px;
-        height: 50px;
-        font-size: 25px;
-    }
-
-    .botoniniciosesion {
-        width: 350px;
-        height: 50px;
-        font-size: 25px;
-    }
-
 }
 
 /*medida para PC*/
-@media (min-width: 768px) and (max-width: 2559px) {
+@media (min-width: 768px){
+    .divBotones{
+        margin-bottom: 30px;
+    }
     .botonregistro {
         width: 350px;
         height: 60px;
         font-size: 25px;
     }
-
     .letraLogo {
         font-family: 'Libre Baskerville', serif;
         font-weight: 700;
@@ -139,30 +104,20 @@
         display: inline-block;
         font-size: 60px;
     }
-
     .logoimagen {
         width: 0px;
     }
-
     .logoimagenrepeat {
         width: 0px;
     }
-
     .cont_home {
-
         padding-top: 60px;
         background-image: linear-gradient(120deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%), url(../img/sinFondo.png);
         background-attachment: fixed;
         background-position: center;
     }
 
-    .logopc {
-        width: 400px;
-        height: 400px;
-        margin-top: -400px;
-        display: block;
-        margin-left: auto;
-    }
+
 
     .botoniniciosesion {
         width: 350px;
@@ -173,24 +128,3 @@
 
 }
 
-@media (min-width: 2560px) {
-    .logoimagen {
-        width: 0px;
-    }
-
-    .logoimagenrepeat {
-        width: 0px;
-    }
-    .logopc{
-        width: 0px;
-    }
-
-    .botonregistro {
-
-        margin-top: -250px;
-
-    }
-    .letraLogo {
-margin-right: 85px;
-    }
-}

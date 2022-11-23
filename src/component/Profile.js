@@ -6,6 +6,13 @@ export const Profile = (onNavigate) => {
   const HomeDiv = document.createElement('div');
   HomeDiv.className = 'divPadrePerfil';
 
+  const divTit = document.createElement('div');
+  HomeDiv.appendChild(divTit);
+  const tituloPro = document.createElement('h2');
+  tituloPro.textContent = 'Edit your Profile';
+  divTit.appendChild(tituloPro);
+  divTit.className = 'divTit';
+
   const form = document.createElement('form');
   form.className = 'form_perfil';
 
@@ -13,7 +20,7 @@ export const Profile = (onNavigate) => {
   const nombre = document.createElement('input');
   nombre.className = 'nombre_input';
   nombre.type = 'text';
-  nombre.placeholder = 'Name';
+  nombre.placeholder = 'Type your Name';
   const labelNombre = document.createElement('label');
   labelNombre.innerText = 'Nombre';
   labelNombre.className = 'nombre_label';
@@ -27,6 +34,7 @@ export const Profile = (onNavigate) => {
   const imgPerfil = document.createElement('input');
   imgPerfil.type = 'url';
   imgPerfil.className = 'url_foto';
+  imgPerfil.placeholder = 'Enter the URL of your image'
   // let nombreCambio = '';
   //  let fotoCambio = '';
   form.appendChild(labelNombre);

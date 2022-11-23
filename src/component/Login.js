@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import { formulariologin } from '../lib/index.js';
+import { formulariologin, formularioGoogle } from '../lib/index.js';
 import { Rutas } from '../lib/rutas.js';
 import { modalMensaje } from '../lib/modal.js';
 
@@ -60,7 +60,7 @@ export const Login = (onNavigate) => {
   const buttonGoogle2 = document.createElement('button');
   buttonGoogle2.classList = 'btn_google2';
   buttonGoogle2.type = 'button';
-  buttonGoogle2.textContent = 'SIGN UP WITH GOOGLE';
+  buttonGoogle2.textContent = 'SIGN IN WITH GOOGLE';
 
   const imagenGoogle2 = document.createElement('img');
   imagenGoogle2.classList = 'google_img2';
@@ -101,6 +101,11 @@ export const Login = (onNavigate) => {
     }).catch((err) => {
       modalMensaje(err);
     });
+  });
+
+  buttonGoogle2.addEventListener('click', () => {
+    formularioGoogle();
+    onNavigate('/Begin');
   });
 
   return HomeDiv;
