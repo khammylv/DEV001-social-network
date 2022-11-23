@@ -21,7 +21,7 @@
   text-transform: uppercase;
   margin-top: 20px;
   font-weight: 700;
-  font-size: 35px;
+  font-size: 55px;
   text-align: center;
   color: #ff0a54;
   /*-webkit-text-stroke: 1px var(--color_borde_bienvenida);*/
@@ -134,7 +134,7 @@
   height: 40px;
   border-radius: 10px;
   align-items: center;
-  font-size: 17px;
+  font-size: 20px;
   background: var(--color_oscuro_boton_formulario);
   color: var(--color_claro_boton_formulario);
   box-shadow: var(--sombra_boton);
@@ -154,13 +154,14 @@
 .btn_home_registro2 {
   padding: 2px;
   cursor: pointer;
-  width: 50px;
-  height: 45px;
-  font-size: 40px;
+  width: 100%;
+  height: 100%;
+  font-size: 70px;
   border: none;
   border-radius: 10px;
   background: transparent;
   color: #fae0e4;
+  margin-left: 20px;
 }
 
 .btn_home_registro2:active {
@@ -194,7 +195,7 @@
   height: 40px;
   border-radius: 10px;
   align-items: center;
-  font-size: 17px;
+  font-size: 20px;
   background: var(--color_oscuro_boton_formulario);
   color: var(--color_claro_boton_formulario);
   box-shadow: var(--sombra_boton);
@@ -219,50 +220,7 @@
   width: 40px;
 }
 
-@media (min-width: 600px) and (max-width: 767px) {
-  .formulariologin {
-    width: 100%;
-    height: 450px;
-    margin: auto;
-    font-size: 20px;
-  }
-
-  .mensajeBienvenida2 {
-    margin-bottom: 10px;
-  }
-
-  /*.ojito_registro{
-  align-items: center;
-  font-size: 22px;
-  height: 30px;
-  width: 40px;
-  margin-right: 200px;
-}*/
-  .grupos2 {
-    width: 100%;
-  }
-
-  .pass_login {
-    width: 78%;
-    height: 40px;
-    padding: 10px;
-  }
-
-  .ojito_login {
-    font-size: 30px;
-  }
-
-  .btn_fotm_login {
-    height: 50px;
-    font-size: 22px;
-    margin: 30px;
-  }
-
-  .mensajeBienvenida2 h2 {
-    margin: 50px;
-    font-size: 50px;
-  }
-}
+@media (min-width: 600px) and (max-width: 767px) {}
 
 /*medida para PC*/
 @media only screen and (min-width: 768px) {
@@ -272,7 +230,7 @@
 
   .formulariologin {
     width: 100%;
-    height: 450px;
+    height: 100%;
     margin: auto;
     font-size: 20px;
   }
@@ -298,7 +256,12 @@
   .btn_fotm_login {
     height: 50px;
     font-size: 22px;
-    margin: 30px;
+
+  }
+
+  .btn_google2 {
+    height: 50px;
+    font-size: 22px;
   }
 
   .mensajeBienvenida2 h2 {

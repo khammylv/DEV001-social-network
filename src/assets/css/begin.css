@@ -1,17 +1,19 @@
-.bienvenida{
+.bienvenida {
+    background-image: linear-gradient(120deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%), url(../img/sinFondo.png);
+    background-attachment: fixed;
+    background-position: center;
     width: 100%;
-    height: 40%;
-   
+    height: 100%;
 }
 
-.contenedorMenu{
+.contenedorMenu {
     width: 100%;
     height: 80px;
-    background: #80ffdb;
-    
+    background: white;
+
 }
 
-.headerPerfil{
+.headerPerfil {
     padding-top: 5px;
     width: 80%;
     display: flex;
@@ -19,16 +21,16 @@
     justify-content: space-between;
 }
 
-.nombrePerfil{
+.nombrePerfil {
     display: flex;
     padding-right: 15px;
     text-align: center;
     align-items: center;
     font-size: 30px;
-    color: #ff0a54;
-  }
-  
-.foto{
+    color: black;
+}
+
+.foto {
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -40,23 +42,21 @@
     margin-top: 10px;
     align-items: center;
     cursor: pointer;
-    
-    
 }
 
 /* Modificador para dar la imagen de checkbox */
 .checkmenuImg {
-    
+
     background-image: url(../img/menu.png);
 }
 
 /* Oculta input original */
-.iconoMenu > .checkmenu {
+.iconoMenu>.checkmenu {
     display: none;
 }
 
 /* Radio personalizado usando <span> */
-.iconoMenu > .imgMenu {
+.iconoMenu>.imgMenu {
     display: inline-block;
     width: 50px;
     height: 50px;
@@ -64,84 +64,98 @@
 }
 
 /* Cambia el checkbox personalizado cuando es pulsado */
-.iconoMenu > .checkmenu:checked + .checkmenuImg {
+.iconoMenu>.checkmenu:checked+.checkmenuImg {
     background-image: url(../img/close.png);
 }
 
-.asideMenu{
+.asideMenu {
     width: 30%;
-    height: 500px;
-    background: #48bfe3;
+    height: 430px;
+    background: #faa5e5;
     display: none;
     transition: all 300ms ease;
     z-index: 10px;
-    position:fixed;
+    position: fixed;
 }
 
-.asideMenu .listasMenu a{ 
-    font-size:20px ;
-    color:white;
+.asideMenu .listasMenu a {
+    font-size: 20px;
+    color: black;
     /*Se usa el display block para que el enlace respete el margin*/
     display: block;
-    padding:20px;
+    padding: 20px;
     text-transform: uppercase;
- }
-.asideMenu .listasMenu li{
+}
+
+.asideMenu .listasMenu li {
     padding-top: 30px;
     padding-left: 15px;
-    width:100%;
-    font-size:20px;
-        
- }
-
- .asideMenu .listasMenu li:last-child{
-    align-items: flex-end;
-   
-    border: none;
- }
- .asideMenu .listasMenu a:hover{ 
+    width: 100%;
     font-size: 20px;
-    padding: 30px 0px; 
+
+}
+
+.asideMenu .listasMenu li:last-child {
+    align-items: flex-end;
+
+    border: none;
+}
+
+.asideMenu .listasMenu a:hover {
+    font-size: 20px;
+    padding: 30px 0px;
     background: #7400b8;
-    text-transform: uppercase;  
- }
-.iconoSalir{
+    text-transform: uppercase;
+}
+
+.iconoSalir {
     width: 50px;
     height: 50px;
 }
 
- .cajapost{
+.contenedorCaja {
+    display: flex;
+    flex-direction: column;
+}
+
+.cajapost {
     width: 80%;
- 
+
     margin: auto;
     padding-top: 50px;
-   
+
 }
-.cardCont{
+
+.cardCont {
     width: 450px;
     height: 300px;
     padding-top: 15px;
-    background: white;
+    background: rgb(63, 3, 101);
     margin: auto;
+    margin-bottom: 20px;
+    border-radius: 15px;
 }
 
-.cajaPost{
+.cajaPost {
     width: 90%;
     height: 80%;
-    margin:auto;
+    margin: auto;
     overflow: hidden;
     border-radius: 5px;
 }
 
-.cajaText{
+.cajaText {
     resize: none;
     width: 100%;
     height: 100%;
     font-size: 15px;
-    background-color: #fff0f3;
-   
+    background-color: #fcccfc;
+    color: black;
+    padding: 10px;
+
 }
-.cajaIcon{
+
+.cajaIcon {
     width: 90%;
     height: 15%;
     margin: auto;
@@ -151,19 +165,20 @@
     padding-top: 5px;
 
 }
-.btnDelete{
-   margin-right: 5px;
-   border: none;
-   font-size: 30px;
-   align-items: center;
-   padding-top: 5px;
-   cursor: pointer;
-   color: #ff0000;
-   background: white;
-   border-radius: 3px;
+
+.btnDelete {
+    margin-right: 5px;
+    border: none;
+    font-size: 30px;
+    align-items: center;
+    padding-top: 5px;
+    cursor: pointer;
+    color: #ff0000;
+    background: white;
+    border-radius: 3px;
 }
 
-.btnEdit{
+.btnEdit {
     border: none;
     font-size: 30px;
     align-items: center;
@@ -174,38 +189,43 @@
     color: #7400b8;
 }
 
-.sectionBody{
+.sectionBody {
     width: 80%;
- 
+
     margin: auto;
     padding-top: 50px;
-   
+
 }
 
-.formPost{
+.formPost {
     width: 450px;
-    height: 300px;
+    height: 200px;
     padding-top: 15px;
-    background: white;
+    background: rgb(118, 112, 122);
     margin: auto;
+    border-radius: 15px;
 }
 
-.cajatextform{
+.cajatextform {
     width: 90%;
     height: 80%;
-    margin:auto;
+    margin: auto;
     overflow: hidden;
     border-radius: 5px;
 }
-.textoPost{
+
+.textoPost {
+    border: none;
+    outline: none;
     resize: none;
     width: 100%;
-    height: 100%;
+    height: 90%;
     font-size: 15px;
-    background-color: #fff0f3;
+    background-color: white;
+    padding: 10px;
 }
 
-.cajabtn{
+.cajabtn {
     width: 90%;
     height: 15%;
     margin: auto;
@@ -214,11 +234,38 @@
     justify-content: flex-end;
     padding-top: 5px;
 }
-.botonPost{
+
+.botonPost {
     width: 100px;
     height: 30px;
     border: none;
-    background:var(--color_boton_form_hover);
+    background-color: rgb(63, 3, 101);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
 }
 
+.btnLike {
+    width: 10%;
+    height: 100%;
+    margin: 1px;
+}
 
+.btnCom {
+    width: 10%;
+    height: 100%;
+    margin: 2px;
+}
+
+.liLike {
+    width: 90%;
+    height: 90%;
+    cursor: pointer;
+}
+
+.liCom {
+    width: 90%;
+    height: 90%;
+    margin-top: 5px;
+    cursor: pointer;
+}

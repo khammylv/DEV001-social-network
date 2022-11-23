@@ -1,11 +1,10 @@
 import { onAuthStateChanged } from 'firebase/auth';
-import {
-  auth, createPost, llamarTareas,
-} from '../lib/index.js';
+import { auth, createPost, llamarTareas} from '../lib/index.js';
 
 export const Begin = (onNavigate) => {
   const HomeDiv = document.createElement('div');
   HomeDiv.className = 'bienvenida';
+
   const headerMenu = document.createElement('header');
   headerMenu.className = 'header_menu';
   const contenedorMenu = document.createElement('div');
@@ -86,11 +85,12 @@ export const Begin = (onNavigate) => {
   cajaTexForm.classList = 'cajatextform';
   const textoPost = document.createElement('textarea');
   textoPost.className = 'textoPost';
+  textoPost.placeholder = 'Type your Post';
   const cajabtn = document.createElement('div');
   cajabtn.className = 'cajabtn';
   const botonPost = document.createElement('button');
   botonPost.type = 'submit';
-  botonPost.textContent = 'enviar post';
+  botonPost.textContent = 'Enviar Post';
   botonPost.className = 'botonPost';
   sectionBody.appendChild(formPost);
   formPost.appendChild(cajaTexForm);
@@ -129,6 +129,7 @@ export const Begin = (onNavigate) => {
             const cajaPost = document.createElement('div');
             cajaPost.className = 'cajaPost';
             cardDiv.appendChild(cajaPost);
+
             const cajaIcon = document.createElement('div');
             cajaIcon.className = 'cajaIcon';
             cardDiv.appendChild(cajaIcon);
@@ -137,6 +138,7 @@ export const Begin = (onNavigate) => {
             cajaText.className = 'cajaText';
             cajaText.disabled = 'true';
             cajaPost.appendChild(cajaText);
+
             const btnDelete = document.createElement('button');
             btnDelete.className = 'btnDelete';
             const btnEdit = document.createElement('button');
@@ -145,6 +147,25 @@ export const Begin = (onNavigate) => {
             liDelete.className = 'bx bx-message-alt-x';
             const liEdit = document.createElement('li');
             liEdit.className = 'bx bx-edit';
+
+            const btnLike = document.createElement('button');
+            btnLike.className = 'btnLike';
+            btnLike.type = 'button';
+            const liLike = document.createElement('img');
+            liLike.className = 'liLike';
+            liLike.src = '../assets/img/me-gusta.png';
+            btnLike.appendChild(liLike);
+
+            const btnCom = document.createElement('button');
+            btnCom.className = 'btnCom';
+            btnCom.type = 'button';
+            const liCom = document.createElement('img');
+            liCom.className = 'liCom';
+            liCom.src = '../assets/img/comment.png';
+            btnCom.appendChild(liCom);
+
+            cajaIcon.appendChild(btnLike);
+            cajaIcon.appendChild(btnCom);
             btnEdit.appendChild(liEdit);
             btnDelete.appendChild(liDelete);
 
