@@ -1,6 +1,8 @@
 /* eslint-disable import/no-unresolved */
 import { onAuthStateChanged } from 'firebase/auth';
-import { auth, createPost, llamarTareas } from '../lib/index.js';
+import {
+  auth, createPost, deleteTasks, llamarTareas,
+} from '../lib/index.js';
 
 export const Begin = (onNavigate) => {
   const HomeDiv = document.createElement('div');
@@ -173,19 +175,51 @@ export const Begin = (onNavigate) => {
             const postFilter = doc.data().id === user.uid;
             if (postFilter) {
               cajaIcon.appendChild(btnDelete);
-              btnDelete.setAttribute('data-id', doc.id);
+              liDelete.setAttribute('id', doc.id);
               cajaIcon.appendChild(btnEdit);
             }
             contenedorCaja.appendChild(cardDiv);
           });
 
+          divPoster.innerHTML = '';
           divPoster.appendChild(contenedorCaja);
           const deletebtn = divPoster.querySelectorAll('.btnDelete');
-          console.log(deletebtn);
           deletebtn.forEach((btn) => {
-            console.log(btn);
-            btn.addEventListener('click', () => {
-              console.log('dentro del boton');
+            btn.addEventListener('click', (e) => {
+              deleteTasks(e.target.id).then(() => {
+                // window.location.reload();
+              });
+            });
+          });
+          const editbtn = divPoster.querySelectorAll('.btnEdit');
+
+          editbtn.forEach((btn) => {
+            btn.addEventListener('mouseup'), (e) => {
+              const id = e.target.id;
+              const carta = divPoster.querySelectorAll('.cardCont');
+              for (let i = 0; carta.length > 1; i++) {
+                const postCard = carta[i].id === e.target.length.id;
+                let cartaInd;
+                if (postCard) {
+                  cartaInd = carta[i];
+                  const tt = cartaInd.querySelector('.cajaText');
+
+                  tt.disabled = false;
+                  const btnedit = cartaInd.querySelector('.cajaPost');
+                  btnedit.style.display = 'block';
+                  const cajaIcon = cartaInd.querySelector('.cajaICon');
+                  cajaIcon.style.display = 'none';
+
+                  const btnsend = cartaInd.querySelector();
+                  btnsend.addEventListener('click', () => {
+                    updateTask(id, {
+                      post: tt.value,
+                    }).then(() => {
+
+                    });
+                  });
+                }
+              }
             });
           });
         });
@@ -193,9 +227,9 @@ export const Begin = (onNavigate) => {
     }
   });
 
-  HomeDiv.appendChild(headerMenu);
-  HomeDiv.appendChild(sectionBody);
-  HomeDiv.appendChild(divPoster);
+      HomeDiv.appendChild(headerMenu);
+      HomeDiv.appendChild(sectionBody);
+      HomeDiv.appendChild(divPoster);
 
-  return HomeDiv;
+        return HomeDiv;
 };
