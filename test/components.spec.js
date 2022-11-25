@@ -32,19 +32,19 @@ describe('testd de begin', () => {
   it('debería ser una función', () => {
     expect(typeof Begin).toBe('function');
   });
-  it('Existe el boton regresar a home', () => {
+  it('Existe el boton de enviar el post', () => {
     const elemento = Begin();
-    const boton = elemento.querySelector('.btn_regresar');
+    const boton = elemento.querySelector('.cajabtn');
     expect(boton).not.toBeNull();
   });
-  it('Existe el boton regresar atras', () => {
+  it('Existe el boton de salvar text', () => {
     const elemento = Begin();
-    const boton = elemento.querySelector('.btn_atras');
+    const boton = elemento.querySelector('.btnSaveText');
     expect(boton).not.toBeNull();
   });
-  it('Existe el boton cerrar secion', () => {
+  it('Existe el boton de eliminar post', () => {
     const elemento = Begin();
-    const boton = elemento.querySelector('.btn_cerrar');
+    const boton = elemento.querySelector('.btnDelete');
     expect(boton).not.toBeNull();
   });
 });
