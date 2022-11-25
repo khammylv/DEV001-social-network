@@ -1,14 +1,60 @@
-/* eslint-disable no-loop-func */
 /* eslint-disable import/no-unresolved */
+// eslint-disable-next-line import/no-unresolved
 import { onAuthStateChanged } from 'firebase/auth';
-// import { updateDoc } from 'firebase/firestore';
 import {
-  auth, createPost, deleteTasks, onGetTasks, updateTask,
+  auth, createPost, onGetTasks, deleteTasks, updateTask,
 } from '../lib/index.js';
 
 export const Begin = (onNavigate) => {
-  const HomeDiv = document.createElement('div');
+  const HomeDiv = document.createElement('section');
   HomeDiv.className = 'bienvenida';
+  // modal Registration
+  // el fondo del modal
+  const modal = document.createElement('section');
+  modal.className = 'modal';
+  // el centro del modal
+  const modalFlex = document.createElement('div');
+  modalFlex.className = 'flex_modal';
+  modal.appendChild(modalFlex);
+  // cont modal
+  const contenidoModal = document.createElement('div');
+  contenidoModal.className = 'contenido_modal';
+  modalFlex.appendChild(contenidoModal);
+  // headermodal
+  const modalHeader = document.createElement('div');
+  modalHeader.className = 'modal_header_begin flex_modal_header';
+  contenidoModal.appendChild(modalHeader);
+  // logomodal
+  const logoModal = document.createElement('div');
+  logoModal.className = 'logo_modal';
+  modalHeader.appendChild(logoModal);
+  const textoHeader = document.createElement('h2');
+  textoHeader.innerText = 'Lymusic';
+  logoModal.appendChild(textoHeader);
+  // botonmodal
+  const botonClose = document.createElement('button');
+  botonClose.className = 'close';
+  botonClose.innerText = 'x';
+  modalHeader.appendChild(botonClose);
+  // body modal
+  const modalBody = document.createElement('div');
+  modalBody.className = 'modal_body_begin';
+  contenidoModal.appendChild(modalBody);
+  const mensajeModal = document.createElement('p');
+  mensajeModal.innerText = 'Are you sure you want to delete the publication?';
+  mensajeModal.className = 'modal_mensaje_begin';
+  const botonModal = document.createElement('button');
+  botonModal.className = 'eliminar_begin';
+  botonModal.textContent = 'Delete';
+  const botonCancelar = document.createElement('button');
+  botonCancelar.textContent = 'Cancel';
+  botonCancelar.className = 'cancelar_begin';
+  modalBody.appendChild(mensajeModal);
+  modalBody.appendChild(botonCancelar);
+  modalBody.appendChild(botonModal);
+
+  HomeDiv.appendChild(modal);
+
   const headerMenu = document.createElement('header');
   headerMenu.className = 'header_menu';
   const contenedorMenu = document.createElement('div');
@@ -33,6 +79,18 @@ export const Begin = (onNavigate) => {
   const nombreUs = document.createElement('h3');
   const fotoUs = document.createElement('img');
   fotoUs.className = 'foto';
+  /* HEADER CON IMAGENES */
+
+  const headerPagina = document.createElement('div');
+  headerPagina.className = 'header_pagina';
+  headerMenu.appendChild(headerPagina);
+  const tituloPag = document.createElement('h1');
+  tituloPag.innerText = 'LyMusic';
+  const subtitle = document.createElement('h3');
+  subtitle.innerText = 'Enjoy the MUSIC';
+  headerPagina.appendChild(tituloPag);
+  headerPagina.appendChild(subtitle);
+
   /* MENU LATERAL */
   const asideMenu = document.createElement('nav');
   headerMenu.appendChild(asideMenu);
@@ -83,24 +141,33 @@ export const Begin = (onNavigate) => {
   });
   const sectionBody = document.createElement('section');
   sectionBody.className = 'sectionBody';
+  const textocc = document.createElement('h3');
+  textocc.innerText = 'Share your love for music with our community';
+  sectionBody.appendChild(textocc);
   const formPost = document.createElement('form');
   formPost.className = 'formPost';
   const cajaTexForm = document.createElement('div');
   cajaTexForm.classList = 'cajatextform';
   const textoPost = document.createElement('textarea');
   textoPost.className = 'textoPost';
+  textoPost.placeholder = 'Write here:';
   const cajabtn = document.createElement('div');
   cajabtn.className = 'cajabtn';
   const botonPost = document.createElement('button');
   botonPost.type = 'submit';
-  botonPost.textContent = 'enviar post';
+  botonPost.textContent = 'Post';
   botonPost.className = 'botonPost';
   sectionBody.appendChild(formPost);
   formPost.appendChild(cajaTexForm);
   cajaTexForm.appendChild(textoPost);
   formPost.appendChild(cajabtn);
   cajabtn.appendChild(botonPost);
-
+  botonCancelar.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+  botonClose.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
   const divPoster = document.createElement('section');
   divPoster.className = 'cajapost';
   onAuthStateChanged(auth, (user) => {
@@ -115,7 +182,7 @@ export const Begin = (onNavigate) => {
         nombrePerfil.appendChild(fotoUs);
         formPost.addEventListener('submit', async (e) => {
           e.preventDefault();
-          createPost(textoPost.value, user.uid);
+          createPost(textoPost.value, user.uid, user.displayName);
           formPost.reset();
         });
 
@@ -124,7 +191,7 @@ export const Begin = (onNavigate) => {
           contenedorCaja.className = 'contenedorCaja';
           querySnapshot.forEach((doc) => {
             const postUS = doc.data();
-
+            // console.log(postUS);
             // esta es la card
             const cardDiv = document.createElement('div');
             cardDiv.className = 'cardCont';
@@ -133,6 +200,10 @@ export const Begin = (onNavigate) => {
             const cajaPost = document.createElement('div');
             cajaPost.className = 'cajaPost';
             cardDiv.appendChild(cajaPost);
+            const cajaName = document.createElement('div');
+            cajaName.className = 'cajaName';
+            cajaName.innerText = postUS.name;
+            cardDiv.appendChild(cajaName);
             const cajaIcon = document.createElement('div');
             cajaIcon.className = 'cajaIcon';
             cardDiv.appendChild(cajaIcon);
@@ -150,10 +221,8 @@ export const Begin = (onNavigate) => {
             imgSave.className = 'btnSaveImage';
             imgSave.src = '../assets/img/send.png';
             btnSaveText.appendChild(imgSave);
-
             const btnDelete = document.createElement('button');
             btnDelete.className = 'btnDelete';
-            // empieza bloque edit
             const btnEdit = document.createElement('button');
             btnEdit.className = 'btnEdit';
             const liDelete = document.createElement('img');
@@ -181,18 +250,26 @@ export const Begin = (onNavigate) => {
           // console.log(deletebtn);
           deletebtn.forEach((btn) => {
             // console.log(btn);
-            btn.addEventListener('click', (e) => {
-              deleteTasks(e.target.id).then(() => {
-                // Window.location.reaload();
+            btn.addEventListener('mouseup', (e) => {
+              modal.style.display = 'block';
+              botonModal.addEventListener('click', () => {
+                deleteTasks(e.target.id).then(() => {
+                  console.log(e.target.id);
+                  modal.style.display = 'none';
+                  // window.location.reload();
+                  // divPoster.innerHTML = '';
+                  // onGetTasks(querySnapshot);
+                });
               });
             });
           });
           const editbtn = divPoster.querySelectorAll('.edit_img');
+
           editbtn.forEach((btn) => {
             btn.addEventListener('mouseup', (e) => {
               const id = e.target.id;
               const carta = divPoster.querySelectorAll('.cardCont');
-              // eslint-disable-next-line
+              // eslint-disable-next-line no-plusplus
               for (let i = 0; i < carta.length; i++) {
                 const postCard = carta[i].id === e.target.id;
                 let cartaInd;
@@ -200,16 +277,21 @@ export const Begin = (onNavigate) => {
                   cartaInd = carta[i];
                   const tt = cartaInd.querySelector('.cajaText');
                   tt.disabled = false;
-                  const btnEditt = cartaInd.querySelector('.cajaEdit');
-                  btnEditt.style.display = 'block';
-                  const cajaIcon = cartaInd.querySelector('.cajaIcon');
-                  cajaIcon.style.display = 'none';
+                  const btnedit = cartaInd.querySelector('.cajaEdit');
+                  btnedit.style.display = 'block';
+                  const cajaicon = cartaInd.querySelector('.cajaIcon');
+                  cajaicon.style.display = 'none';
 
                   const btnsend = cartaInd.querySelector('.btnSaveImage');
+                  // eslint-disable-next-line no-loop-func
                   btnsend.addEventListener('click', () => {
                     updateTask(id, {
                       post: tt.value,
+
                     }).then(() => {
+                      // window.location.reload();
+                      // divPoster.innerHTML = '';
+                      // onGetTasks(querySnapshot);
                     });
                   });
                 }
@@ -220,7 +302,6 @@ export const Begin = (onNavigate) => {
       }
     }
   });
-
   HomeDiv.appendChild(headerMenu);
   HomeDiv.appendChild(sectionBody);
   HomeDiv.appendChild(divPoster);
