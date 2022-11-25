@@ -166,7 +166,7 @@
 
 }
 
-.btnDelete {
+.delete_img {
     margin-right: 5px;
     border: none;
     font-size: 30px;
@@ -178,7 +178,7 @@
     border-radius: 3px;
 }
 
-.btnEdit {
+.edit_img {
     border: none;
     font-size: 30px;
     align-items: center;

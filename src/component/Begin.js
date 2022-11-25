@@ -1,13 +1,14 @@
+/* eslint-disable no-loop-func */
 /* eslint-disable import/no-unresolved */
 import { onAuthStateChanged } from 'firebase/auth';
+// import { updateDoc } from 'firebase/firestore';
 import {
-  auth, createPost, deleteTasks, llamarTareas,
+  auth, createPost, deleteTasks, onGetTasks, updateTask,
 } from '../lib/index.js';
 
 export const Begin = (onNavigate) => {
   const HomeDiv = document.createElement('div');
   HomeDiv.className = 'bienvenida';
-
   const headerMenu = document.createElement('header');
   headerMenu.className = 'header_menu';
   const contenedorMenu = document.createElement('div');
@@ -88,12 +89,11 @@ export const Begin = (onNavigate) => {
   cajaTexForm.classList = 'cajatextform';
   const textoPost = document.createElement('textarea');
   textoPost.className = 'textoPost';
-  textoPost.placeholder = 'Type your Post';
   const cajabtn = document.createElement('div');
   cajabtn.className = 'cajabtn';
   const botonPost = document.createElement('button');
   botonPost.type = 'submit';
-  botonPost.textContent = 'Enviar Post';
+  botonPost.textContent = 'enviar post';
   botonPost.className = 'botonPost';
   sectionBody.appendChild(formPost);
   formPost.appendChild(cajaTexForm);
@@ -119,7 +119,7 @@ export const Begin = (onNavigate) => {
           formPost.reset();
         });
 
-        llamarTareas((querySnapshot) => {
+        onGetTasks((querySnapshot) => {
           const contenedorCaja = document.createElement('div');
           contenedorCaja.className = 'contenedorCaja';
           querySnapshot.forEach((doc) => {
@@ -128,11 +128,11 @@ export const Begin = (onNavigate) => {
             // esta es la card
             const cardDiv = document.createElement('div');
             cardDiv.className = 'cardCont';
+            cardDiv.setAttribute('id', doc.id);
             sectionBody.appendChild(cardDiv);
             const cajaPost = document.createElement('div');
             cajaPost.className = 'cajaPost';
             cardDiv.appendChild(cajaPost);
-
             const cajaIcon = document.createElement('div');
             cajaIcon.className = 'cajaIcon';
             cardDiv.appendChild(cajaIcon);
@@ -141,34 +141,27 @@ export const Begin = (onNavigate) => {
             cajaText.className = 'cajaText';
             cajaText.disabled = 'true';
             cajaPost.appendChild(cajaText);
+            const cajaEdit = document.createElement('div');
+            cajaEdit.className = 'cajaEdit';
+            cardDiv.appendChild(cajaEdit);
+            const btnSaveText = document.createElement('button');
+            btnSaveText.className = 'btnSaveText';
+            const imgSave = document.createElement('img');
+            imgSave.className = 'btnSaveImage';
+            imgSave.src = '../assets/img/send.png';
+            btnSaveText.appendChild(imgSave);
 
             const btnDelete = document.createElement('button');
             btnDelete.className = 'btnDelete';
+            // empieza bloque edit
             const btnEdit = document.createElement('button');
             btnEdit.className = 'btnEdit';
-            const liDelete = document.createElement('li');
-            liDelete.className = 'bx bx-message-alt-x';
-            const liEdit = document.createElement('li');
-            liEdit.className = 'bx bx-edit';
-
-            const btnLike = document.createElement('button');
-            btnLike.className = 'btnLike';
-            btnLike.type = 'button';
-            const liLike = document.createElement('img');
-            liLike.className = 'liLike';
-            liLike.src = '../assets/img/me-gusta.png';
-            btnLike.appendChild(liLike);
-
-            const btnCom = document.createElement('button');
-            btnCom.className = 'btnCom';
-            btnCom.type = 'button';
-            const liCom = document.createElement('img');
-            liCom.className = 'liCom';
-            liCom.src = '../assets/img/comment.png';
-            btnCom.appendChild(liCom);
-
-            cajaIcon.appendChild(btnLike);
-            cajaIcon.appendChild(btnCom);
+            const liDelete = document.createElement('img');
+            liDelete.className = 'delete_img';
+            liDelete.src = '../assets/img/delete.png';
+            const liEdit = document.createElement('img');
+            liEdit.className = 'edit_img';
+            liEdit.src = '../assets/img/edit.png';
             btnEdit.appendChild(liEdit);
             btnDelete.appendChild(liDelete);
 
@@ -177,45 +170,46 @@ export const Begin = (onNavigate) => {
               cajaIcon.appendChild(btnDelete);
               liDelete.setAttribute('id', doc.id);
               cajaIcon.appendChild(btnEdit);
+              liEdit.setAttribute('id', doc.id);
+              cajaEdit.appendChild(btnSaveText);
             }
             contenedorCaja.appendChild(cardDiv);
           });
-
           divPoster.innerHTML = '';
           divPoster.appendChild(contenedorCaja);
-          const deletebtn = divPoster.querySelectorAll('.btnDelete');
+          const deletebtn = divPoster.querySelectorAll('.delete_img');
+          // console.log(deletebtn);
           deletebtn.forEach((btn) => {
+            // console.log(btn);
             btn.addEventListener('click', (e) => {
               deleteTasks(e.target.id).then(() => {
-                // window.location.reload();
+                // Window.location.reaload();
               });
             });
           });
-          const editbtn = divPoster.querySelectorAll('.btnEdit');
-
+          const editbtn = divPoster.querySelectorAll('.edit_img');
           editbtn.forEach((btn) => {
-            btn.addEventListener('mouseup'), (e) => {
+            btn.addEventListener('mouseup', (e) => {
               const id = e.target.id;
               const carta = divPoster.querySelectorAll('.cardCont');
-              for (let i = 0; carta.length > 1; i++) {
-                const postCard = carta[i].id === e.target.length.id;
+              // eslint-disable-next-line
+              for (let i = 0; i < carta.length; i++) {
+                const postCard = carta[i].id === e.target.id;
                 let cartaInd;
                 if (postCard) {
                   cartaInd = carta[i];
                   const tt = cartaInd.querySelector('.cajaText');
-
                   tt.disabled = false;
-                  const btnedit = cartaInd.querySelector('.cajaPost');
-                  btnedit.style.display = 'block';
-                  const cajaIcon = cartaInd.querySelector('.cajaICon');
+                  const btnEditt = cartaInd.querySelector('.cajaEdit');
+                  btnEditt.style.display = 'block';
+                  const cajaIcon = cartaInd.querySelector('.cajaIcon');
                   cajaIcon.style.display = 'none';
 
-                  const btnsend = cartaInd.querySelector();
+                  const btnsend = cartaInd.querySelector('.btnSaveImage');
                   btnsend.addEventListener('click', () => {
                     updateTask(id, {
                       post: tt.value,
                     }).then(() => {
-
                     });
                   });
                 }
@@ -227,9 +221,9 @@ export const Begin = (onNavigate) => {
     }
   });
 
-      HomeDiv.appendChild(headerMenu);
-      HomeDiv.appendChild(sectionBody);
-      HomeDiv.appendChild(divPoster);
+  HomeDiv.appendChild(headerMenu);
+  HomeDiv.appendChild(sectionBody);
+  HomeDiv.appendChild(divPoster);
 
-        return HomeDiv;
+  return HomeDiv;
 };
