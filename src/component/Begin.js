@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { onAuthStateChanged } from 'firebase/auth';
 import {
   auth, createPost, onGetTasks, deleteTasks, updateTask,
