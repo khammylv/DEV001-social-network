@@ -149,6 +149,7 @@ export const Login = (onNavigate) => {
     formulariologin(email.value, pass.value).then(() => {
       onNavigate(Rutas('login'));
       form.reset();
+      window.location.reload();
     }).catch((err) => {
       modal.style.display = 'block';
 

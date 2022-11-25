@@ -1,105 +1,162 @@
-/*.divPadrePerfil {
-    background-image: linear-gradient(120deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%), url(../img/sinFondo.png);
+.divPadrePerfil{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-image: linear-gradient(to right, rgba(106, 17, 203, 0.5) 0%, #2575fc 100%),url(../img/sinFondo.png);
     background-attachment: fixed;
     background-position: center;
+  }
+
+
+  .contenedorPerfil{
     width: 100%;
     height: 100%;
-    padding: 50px;
-}
+  }
 
-.form_perfil {
-    width: 350px;
-    height: 30%;
-    margin: auto;
-    display: flex;
-    justify-content: left;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    padding: 20px;
-    border: solid 2px white;
-    margin-top: 150px;
-    background: rgba(0, 0, 0, 0.5);
+  .img_container_profile{
+    display: none;
+  }
 
-}
-
-.nombrePerfil {
-    margin-top: 2px;
-}
-
-
-
-.nombre_input {
-    text-align: left;
-    font-size: 15px;
-    font-weight: bold;
-
-    padding: 5px;
-    background: white;
-    width: 300px;
-    height: 40px;
-
-    border-radius: 10px;
-}
-
-.nombre_label {
-    text-align: left;
-    font-size: 15px;
-    margin-bottom: -10px;
-    width: 100%;
-    height: 30px;
-    padding: 5px;
-    background: black;
-    color: white;
-}
-
-.label_url {
-    text-align: left;
-    font-size: 15px;
-    margin-bottom: -10px;
-    width: 100%;
-    height: 30px;
-    padding: 5px;
-    background: black;
-    color: white;
-}
-
-.btn_submit {
-    text-align: center;
-    font-size: 15px;
-    font-weight: bold;
-    width: 60%;
-    height: 30px;
-    padding: 5px;
-
-    border-radius: 10px;
-    background: var(--color_oscuro_boton_formulario);
-    color: var(--color_claro_boton_formulario);
-    box-shadow: var(--sombra_boton);
-    margin-top: 40px;
-}
-
-.url_foto {
-    text-align: left;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 5px;
-    background: white;
-    width: 300px;
-    height: 40px;
-    border-radius: 10px;
-}
-
-.divTit {
-    color: white;
-    text-align: center;
+  .btn_home_profile{
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    font-weight: 700;
     font-size: 40px;
-    margin-top: 100px;
+    color: white;
+    padding-bottom: 10px;
+    background: none;
+    cursor: pointer;
+  }
+  .divTit{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+  }
+   
+  .divTit h2{
+    font-weight: 700;
+    font-size: 35px;
+    color: #80ffdb;
+    -webkit-text-stroke: 0.4px #48bfe3;
+  }
+  .formularioProfile{
+    width :90%;
+    height: 450px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.6);
+    padding-top: 15px;
+    border-radius: 5px;
+  }
+  .formularioProfile h2{
+    color: #f72585;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.gruposProfile{
+    position: relative;
+    margin: 45px ;
+}
+  
+.nombre_input ,.url_foto  {
+    background: none;
+    color: #c6c6c6;
+    font-size: 18px;
+    padding: 30px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--colorTextos);
+  }
+  
+  .nombre_input ,.url_foto:focus{ 
+    outline: none;
+    color: #f4f3ee;
+  }
+
+  .nombre_label, .label_url {
+    color: var(--colorTextos);
+    font-size: 16px;
+    position: absolute;
+    left: 5px;
+    top: 0px;
+    transition: 0.5s ease all;
+    pointer-events: none;
+    
+  }
+
+.nombre_input:focus~label,
+.nombre_input:valid~label{
+    top: -14px;
+    font-size: 15px;
+    color: #ff4d6d;
+}
+.url_foto:focus~label,
+.url_foto:valid~label{
+    top: -14px;
+    font-size: 15px;
+    color: #ff4d6d;
 }
 
-@media only screen and (min-width: 768px) {
-    .form_perfil {
-        height: 50%;
-        margin-top: 100px;
+.barra_profile{
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+
+  .barra_profile::before{
+    content: "";
+    height: 2px;
+    width: 0%;
+    bottom: 0;
+    position: absolute;
+    background: linear-gradient(to top, #37ecba 0%, #72afd3 100%);
+    transition: 0.3s ease width;
+    left: 0;
+  }
+
+  .nombre_input:focus~.barra_profile::before{
+    width: 100%;
+  }
+  .url_foto:focus~.barra_profile::before{
+    width: 100%;
+  }
+
+  .btn_submit{
+    background: linear-gradient(to right, #74ebd5 0%, #9face6 100%);
+    border: none;
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    color: #184e77;
+    height: 40px;
+    font-size:15px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  
+  @media (min-width: 900px){
+    .con_form_profile{
+      display: flex;
+      
     }
-}*/
+    .formularioProfile{
+      width: 400px;
+    }
+    .img_container_profile{
+      display: block;
+      width: 60%;
+      height: 100%;
+      background:rgba(255, 60, 172)
+    }
+    .divTit h2{
+      font-size: 50px ;
+      -webkit-text-stroke: 0.6px #48bfe3;
+    }
+    .btn_home_profile{
+      
+      font-weight: 900;
+    }
+  }

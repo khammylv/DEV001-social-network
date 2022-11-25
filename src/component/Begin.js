@@ -137,6 +137,7 @@ export const Begin = (onNavigate) => {
   liHome.addEventListener('click', (e) => {
     e.preventDefault();
     onNavigate('/profile');
+    // window.location.reload();
   });
   const sectionBody = document.createElement('section');
   sectionBody.className = 'sectionBody';
@@ -169,6 +170,7 @@ export const Begin = (onNavigate) => {
   });
   const divPoster = document.createElement('section');
   divPoster.className = 'cajapost';
+
   onAuthStateChanged(auth, (user) => {
     if (user) {
       if (user !== null) {
@@ -253,7 +255,6 @@ export const Begin = (onNavigate) => {
               modal.style.display = 'block';
               botonModal.addEventListener('click', () => {
                 deleteTasks(e.target.id).then(() => {
-                  console.log(e.target.id);
                   modal.style.display = 'none';
                   // window.location.reload();
                   // divPoster.innerHTML = '';
@@ -266,7 +267,6 @@ export const Begin = (onNavigate) => {
 
           editbtn.forEach((btn) => {
             btn.addEventListener('mouseup', (e) => {
-              console.log(e.target.id);
               const id = e.target.id;
               const carta = divPoster.querySelectorAll('.cardCont');
               // eslint-disable-next-line no-plusplus
@@ -288,23 +288,32 @@ export const Begin = (onNavigate) => {
                     updateTask(id, {
                       post: tt.value,
                     });
-                    // }).then(() => {
-                    //   window.location.reload();
-                    //   // divPoster.innerHTML = '';
-                    //   // onGetTasks(querySnapshot);
-                    // });
                   });
                 }
               }
             });
           });
         });
+        HomeDiv.appendChild(headerMenu);
+        HomeDiv.appendChild(sectionBody);
+        HomeDiv.appendChild(divPoster);
       }
+    } else {
+      const divMensajeError = document.createElement('div');
+      divMensajeError.className = 'error_mensaje';
+      const mensajeError = document.createElement('h1');
+      mensajeError.innerText = 'Unauthorized user';
+      divMensajeError.appendChild(mensajeError);
+      const botonError = document.createElement('button');
+      botonError.className = 'boton_error';
+      botonError.innerText = 'Go to HOME';
+      botonError.addEventListener('click', () => {
+        onNavigate('/');
+      });
+      divMensajeError.appendChild(botonError);
+      HomeDiv.appendChild(divMensajeError);
     }
   });
-  HomeDiv.appendChild(headerMenu);
-  HomeDiv.appendChild(sectionBody);
-  HomeDiv.appendChild(divPoster);
 
   return HomeDiv;
 };

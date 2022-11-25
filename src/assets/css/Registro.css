@@ -123,12 +123,7 @@
   width: 100%;
 }
 .btn_formulario_registro{
-  
-  background: #4568DC;
-  
-  
   background: linear-gradient(to right, #B06AB3, #4568DC);
-  
   border: none;
   display: block;
   width: 80%;
