@@ -308,6 +308,7 @@ export const Begin = (onNavigate) => {
       botonError.innerText = 'Go to HOME';
       botonError.addEventListener('click', () => {
         onNavigate('/');
+        window.location.reload();
       });
       divMensajeError.appendChild(botonError);
       HomeDiv.appendChild(divMensajeError);
