@@ -4,7 +4,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } f
 // eslint-disable-next-line import/no-duplicates
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import {
-  collection, addDoc, getDocs, onSnapshot, deleteDoc, doc,
+  collection, addDoc, getDocs, onSnapshot, deleteDoc, doc, getDoc, updateDoc,
 } from 'firebase/firestore';
 import { app, db } from './Firebase.js';
 
@@ -65,5 +65,7 @@ export const createPost = (postUs, idUs) => addDoc(collection(db, 'postMusic'), 
 
 export const getTasks = () => getDocs(collection(db, 'postMusic'));
 
-export const llamarTareas = (callback) => onSnapshot(collection(db, 'postMusic'), callback);
+export const onGetTasks = (callback) => onSnapshot(collection(db, 'postMusic'), callback);
 export const deleteTasks = (id) => deleteDoc(doc(db, 'postMusic', id));
+export const getTask = (id) => getDoc(doc(db, 'postUser', id));
+export const updateTask = (id, newFields) => updateDoc(doc(db, 'postUser', id), newFields);
