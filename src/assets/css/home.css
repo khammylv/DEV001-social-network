@@ -1,125 +1,167 @@
-.cont_home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.contenedor_home{
     width: 100%;
-    height: 100%;
-    text-align: right;
-    padding: 10px;
-    margin-bottom: 3rem;
+    height: 100vh;
+    background: var(--fondo_home)
 }
-
-.logo_home {
-    display: flex;
-    flex-direction: column;
+.contenedor_todo{
     width: 100%;
-    height: 60%;
+    height:100%;
     margin: auto;
-    /*    -webkit-box-reflect: below -520px
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));*/
+    background: rgba(0, 0, 0, 0.5);
+    
 }
 
-.logoimagen {
-    width: 100%;
-    height: 60%;
-}
-
-.logoimagenrepeat {
-    width: 100%;
-    height: 60%;
-    margin-top: -200px;
-    opacity: 0.4;
-}
-
-.logopc {
-    width: 0%;
-    height: 0%;
-}
-
+.logo {
+    text-align: right;
+    width: 90%;
+    height: 80%;
+    margin: auto;
+    background-image: url(../img/centro.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    
+}  
 .letraLogo {
     font-family: 'Libre Baskerville', serif;
-    margin-top: 90px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-right: 50px;
     color: white;
     display: inline-block;
-    font-size: 60px;
-    align-items: flex-end;
+    font-size: 50px;
+    
 }
+
 
 .botonregistro {
     cursor: pointer;
-    width: 300px;
-    height: 40px;
-    font-size: 20px;
+    width: var(--ancho_botones);
+    height: var(--alto_botones);
+    font-size: var(--letra_texto_tamaño);
     border: none;
     border-radius: 10px;
-    margin-bottom: 30px;
-    background: #ff0a54;
+    background: var(--color_boton_registro);
     color: #fae0e4;
-    box-shadow: 0 9px 14px rgba(255, 254, 254, 0.3);
+    box-shadow: var(--sombra_botones);
+    text-transform: uppercase;
 }
-
+.botonregistro:hover{
+    background: var(--color_boton_registro_hover);
+}
 .botoniniciosesion {
     cursor: pointer;
-    width: 300px;
-    height: 40px;
-    font-size: 20px;
+    width: var(--ancho_botones);
+    height: var(--alto_botones);
+    font-size: var(--letra_texto_tamaño);
     border: none;
     border-radius: 10px;
-    background: #680da4;
+    background: var(--color_boton_login);
     color: #fae0e4;
-    box-shadow: 0 9px 14px rgba(255, 254, 254, 0.3);
+    box-shadow: var(--sombra_botones);
+    text-transform: uppercase;
 }
-
+.botoniniciosesion:hover{
+    background: var(--color_boton_login_hover);
+}
 .divBotones {
-
-    width: 100%;
+   width: 100%;
     height: 20%;
+    margin: auto;
     display: flex;
-    flex-direction: column;
     align-items: center;
-
+    justify-content: space-evenly;
+    flex-direction: column;
+    
+}
+@media (min-width: 920px){
+    .logo{
+        height: 600px;
+        background-image: url(../img/equalizer-153212_1280.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 60%;
+    }
+    .divBotones{
+        flex-direction: row; 
+    }
+    .divBotones{
+        width: 60%; 
+    }
 }
 
-/*medida para PC*/
-@media (min-width: 768px){
-    .divBotones{
-        margin-bottom: 30px;
+@media (min-width: 1020){
+    .contenedor_home{
+        width: 100%;
+        height: 100%;
+        
     }
-    .botonregistro {
-        width: 350px;
-        height: 60px;
-        font-size: 25px;
+    .contenedor_todo{
+        width: 100%;
+        height:100%;
+        margin: auto;
+       
+        
     }
+    .logo {
+        overflow: hidden;
+        text-align: right;
+        width: 60%;
+        height: 600px;
+        background-image: url(../img/equalizer-153212_1280.png);
+        margin: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    
     .letraLogo {
         font-family: 'Libre Baskerville', serif;
         font-weight: 700;
-        margin-top: 40px;
+        margin-top: 20px;
         margin-right: 50px;
         color: white;
         display: inline-block;
-        font-size: 60px;
+        font-size: 50px;
     }
-    .logoimagen {
-        width: 0px;
+    
+    
+    .botonregistro {
+        cursor: pointer;
+        width: var(--ancho_botones);
+        height: var(--alto_botones);
+        font-size: var(--letra_texto_tamaño);
+        border: none;
+        border-radius: 10px;
+        background: var(--color_boton_registro);
+        color: #fae0e4;
+        
+        text-transform: uppercase;
     }
-    .logoimagenrepeat {
-        width: 0px;
-    }
-    .cont_home {
-        padding-top: 60px;
-        background-image: linear-gradient(120deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%), url(../img/sinFondo.png);
-        background-attachment: fixed;
-        background-position: center;
-    }
-
-
-
+    
     .botoniniciosesion {
-        width: 350px;
-        height: 60px;
-        font-size: 25px;
+        cursor: pointer;
+        width: var(--ancho_botones);
+        height: var(--alto_botones);
+        font-size: var(--letra_texto_tamaño);
+        border: none;
+        border-radius: 10px;
+        background: var(--color_boton_login);
+        color: #fae0e4;
+        box-shadow: var(--sombra_botones);
+        text-transform: uppercase;
     }
 
-
+    .divBotones {
+        padding-top: 25px;
+        width: 60%;
+        height: auto;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    
+    }
 }
-
