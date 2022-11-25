@@ -4,7 +4,7 @@
     background-image: linear-gradient(to top, rgba(0, 122, 223, 0.5) 0%, #00ecbc 100%), url(../img/sinFondo.png);
     background-attachment: fixed;
     background-position: center;
-    background-repeat: no-repeat;
+   
     /*background: linear-gradient(to bottom, rgba(17, 15, 15, 0.5) 0%, rgba(0, 0, 0, 0.6) 40%, rgb(0, 0, 0, 0.9) 150%), linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 200%)/*,url(../img/sinFondo.png);
  background-blend-mode: multiply;*/
 }
@@ -81,7 +81,7 @@
 
 .asideMenu {
     width: 45%;
-    height: 300px;
+    height: 250px;
     background: linear-gradient(to top, rgba(232, 25, 139, 0.8) 0%, #c7eafd 100%);
     display: none;
     transition: all 300ms ease;
@@ -95,11 +95,11 @@
 
 .asideMenu .listasMenu a {
 
-    font-size: 20px;
+    font-size: 15px;
     color: #7209b7;
     /*Se usa el display block para que el enlace respete el margin*/
     display: block;
-    padding: 20px;
+    padding: 15px 0px;
     text-transform: uppercase;
 }
 
@@ -118,10 +118,12 @@
 }
 
 .asideMenu .listasMenu a:hover {
-    font-size: 10px;
+    font-size: 15px;
     padding: 10px 0px;
     background: #7400b8;
     text-transform: uppercase;
+    color: white;
+    transform: scale(1.1);
 }
 
 .iconoSalir {
@@ -370,10 +372,18 @@
     }
 
     .asideMenu {
-        width: 30%;
+        width: 20%;
         top: 100px;
+        height: 300px;
+        margin-left: 120px;
     }
-
+    .asideMenu .listasMenu a{
+        padding: 20px 0;
+        font-size: 20px;
+    }
+    .asideMenu .listasMenu a:hover{
+        padding: 20px 10px;
+    }
     .header_pagina {
         height: 300px;
 
