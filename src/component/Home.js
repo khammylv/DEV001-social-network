@@ -1,41 +1,35 @@
 export const Home = (onNavigate) => {
-  const HomeDiv = document.createElement('div');
-  HomeDiv.className = 'cont_home';
-  const buttonRegister = document.createElement('button');
-  const buttonLogin = document.createElement('button');
+  const HomeDiv = document.createElement('section');
+  HomeDiv.className = 'contenedor_home';
+  const contenedorTodo = document.createElement('div');
+  contenedorTodo.className = 'contenedor_todo';
+  // logo
   const divLogo = document.createElement('div');
-  divLogo.className = 'logo_home';
+  divLogo.className = 'logo';
   const letraLogo = document.createElement('h1');
   letraLogo.className = 'letraLogo';
   letraLogo.textContent = 'Lymusic';
-  HomeDiv.appendChild(letraLogo);
-  HomeDiv.appendChild(divLogo);
-  const imagen = document.createElement('img');
-  imagen.src = '../assets/img/sinFondo.png';
-  imagen.alt = 'logoimagen';
-  imagen.classList = 'logoimagen';
-  const imagen2 = document.createElement('img');
-  imagen2.src = '../assets/img/sinFondo.png';
-  imagen2.alt = 'logoimagen2';
-  imagen2.classList = 'logoimagenrepeat';
-  const imagen3 = document.createElement('img');
-  imagen3.src = '../assets/img/music.png';
-  imagen3.alt = 'logopc';
-  imagen3.classList = 'logopc';
-  divLogo.appendChild(imagen);
-  divLogo.appendChild(imagen2);
-  divLogo.appendChild(imagen3);
+
+  // caja de los botones
   const divBotones = document.createElement('div');
   divBotones.className = 'divBotones';
-  buttonRegister.textContent = 'Register';
+  // botonregistro
+  const buttonRegister = document.createElement('button');
+  buttonRegister.innerText = 'Register';
   buttonRegister.className = 'botonregistro';
+  // boton login
+  const buttonLogin = document.createElement('button');
   buttonLogin.textContent = 'Sign in';
   buttonLogin.className = 'botoniniciosesion';
+
   buttonRegister.addEventListener('click', () => onNavigate('/register'));
   buttonLogin.addEventListener('click', () => onNavigate('/login'));
 
+  divLogo.appendChild(letraLogo);
   divBotones.appendChild(buttonRegister);
   divBotones.appendChild(buttonLogin);
-  HomeDiv.appendChild(divBotones);
+  contenedorTodo.appendChild(divLogo);
+  contenedorTodo.appendChild(divBotones);
+  HomeDiv.appendChild(contenedorTodo);
   return HomeDiv;
 };
