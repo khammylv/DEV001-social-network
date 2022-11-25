@@ -1,4 +1,4 @@
-/* eslint-disable import/no-unresolved */
+// funciones puras//
 // eslint-disable-next-line import/no-duplicates, import/no-unresolved
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 // eslint-disable-next-line import/no-duplicates
@@ -63,6 +63,7 @@ export const createPost = (postUs, idUs) => addDoc(collection(db, 'postMusic'), 
   return err.code;
 });
 
+//obtener tares (getTask)
 export const getTasks = () => getDocs(collection(db, 'postMusic'));
 
 export const llamarTareas = (callback) => onSnapshot(collection(db, 'postMusic'), callback);
