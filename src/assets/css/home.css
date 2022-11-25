@@ -84,9 +84,7 @@
         width: 60%;
     }
     .divBotones{
-        flex-direction: row; 
-    }
-    .divBotones{
+        flex-direction: row;
         width: 60%; 
     }
 }
