@@ -1,90 +1,141 @@
-/* eslint-disable import/no-unresolved */
 import { formulariologin, formularioGoogle } from '../lib/index.js';
 import { Rutas } from '../lib/rutas.js';
-import { modalMensaje } from '../lib/modal.js';
 
 export const Login = (onNavigate) => {
-  const HomeDiv = document.createElement('div');
+  const HomeDiv = document.createElement('section');
   HomeDiv.className = 'divPadre2';
+
+  // modal Registration
+  // el fondo del modal
+  const modal = document.createElement('section');
+  modal.className = 'modal';
+  // el centro del modal
+  const modalFlex = document.createElement('div');
+  modalFlex.className = 'flex_modal';
+  modal.appendChild(modalFlex);
+  // cont modal
+  const contenidoModal = document.createElement('div');
+  contenidoModal.className = 'contenido_modal';
+  modalFlex.appendChild(contenidoModal);
+  // headermodal
+  const modalHeader = document.createElement('div');
+  modalHeader.className = 'modal_header_login flex_modal_header';
+  contenidoModal.appendChild(modalHeader);
+  // logomodal
+  const logoModal = document.createElement('div');
+  logoModal.className = 'logo_modal';
+  modalHeader.appendChild(logoModal);
+  const textoHeader = document.createElement('h2');
+  textoHeader.innerText = 'Lymusic';
+  logoModal.appendChild(textoHeader);
+  // botonmodal
+  const botonClose = document.createElement('button');
+  botonClose.className = 'close';
+  botonClose.innerText = 'x';
+  modalHeader.appendChild(botonClose);
+  // body modal
+  const modalBody = document.createElement('div');
+  modalBody.className = 'modal_body_login';
+  contenidoModal.appendChild(modalBody);
+  const mensajeModal = document.createElement('p');
+  mensajeModal.className = 'modal_mensaje_login';
+  modalBody.appendChild(mensajeModal);
+
+  HomeDiv.appendChild(modal);
+
+  // div container
+  const divcontainer = document.createElement('div');
+  divcontainer.className = 'container_login';
+  // cont div registro
+  const divLogin = document.createElement('div');
+  divLogin.className = 'con_form_login';
+
+  // boton retorno
   const divBoton = document.createElement('div');
   divBoton.className = 'botonRegreso2';
-  HomeDiv.appendChild(divBoton);
-  const buttonHome2 = document.createElement('button');
-  buttonHome2.textContent = '«';
-  buttonHome2.classList = 'btn_home_registro2';
-  divBoton.appendChild(buttonHome2);
-  buttonHome2.addEventListener('click', () => onNavigate('/'));
+  const buttonHome = document.createElement('button');
+  buttonHome.textContent = 'Back to home';
+  buttonHome.className = 'btn_home_login';
+  buttonHome.textContent = '«';
+  divBoton.appendChild(buttonHome);
+  divcontainer.appendChild(divBoton);
+
+  // div titulo y textos
   const divBienvenida2 = document.createElement('div');
-  HomeDiv.appendChild(divBienvenida2);
   const mensajeBienvenida2 = document.createElement('h2');
   mensajeBienvenida2.textContent = 'Welcome to lymusic';
   divBienvenida2.appendChild(mensajeBienvenida2);
   divBienvenida2.className = 'mensajeBienvenida2';
+  divcontainer.appendChild(divBienvenida2);
 
+  // imagen tamaño pc
+  const divImgContainer = document.createElement('div');
+  divImgContainer.className = 'img_container_login';
+  divLogin.appendChild(divImgContainer);
+
+  // formulario
   const form = document.createElement('form');
+
+  // div formulario
   const divForm = document.createElement('div');
-  HomeDiv.appendChild(form);
+  divForm.className = 'formulariologin';
   form.appendChild(divForm);
-  const tituloForm = document.createElement('h1');
+  // titulo formulario
+  const tituloForm = document.createElement('h2');
   tituloForm.textContent = 'Sign In';
   divForm.appendChild(tituloForm);
-  divForm.className = 'formulariologin';
+  // grupos de formulario
   const grupo1 = document.createElement('div');
-  const grupo2 = document.createElement('div');
+  grupo1.className = 'grupos2';
   const email = document.createElement('input');
   email.type = 'email';
-  email.placeholder = 'Email';
+  email.className = 'emailLogin';
+  const barra1L = document.createElement('span');
+  barra1L.className = 'barraLogin';
   const labelEmail = document.createElement('label');
   labelEmail.textContent = 'Email';
-  labelEmail.classList = 'label_email';
+  labelEmail.className = 'labelEmailLogin';
+  divForm.appendChild(grupo1);
+  grupo1.appendChild(email);
+  grupo1.appendChild(barra1L);
+  grupo1.appendChild(labelEmail);
+
+  const grupo2 = document.createElement('div');
+  grupo2.className = 'grupos2';
   const pass = document.createElement('input');
   pass.type = 'password';
-  pass.placeholder = 'Password';
-  pass.classList = 'pass_login';
-  email.classList = 'email_login';
+  pass.className = 'passLogin';
+  const barra2L = document.createElement('span');
+  barra2L.className = 'barraLogin';
+  const spanPass = document.createElement('span');
+  spanPass.textContent = '👀';
+  spanPass.className = 'ojito';
   const labelPass = document.createElement('label');
   labelPass.textContent = 'Password';
-  labelPass.classList = 'label_pass';
+  labelPass.className = 'labelPassLogin';
+  divForm.appendChild(grupo2);
+  grupo2.appendChild(pass);
+  grupo2.appendChild(barra2L);
+  grupo2.appendChild(spanPass);
+  grupo2.appendChild(labelPass);
 
   const buttonSubmit = document.createElement('button');
-  buttonSubmit.textContent = 'LOGIN';
-  buttonSubmit.classList = 'btn_fotm_login';
-  buttonSubmit.type = 'button';
-
-  const imagenEmail2 = document.createElement('img');
-  imagenEmail2.classList = 'email_img2';
-  imagenEmail2.src = '../assets/img/email.png';
-  imagenEmail2.alt = 'imagen de email';
-  buttonSubmit.appendChild(imagenEmail2);
-
-  const buttonGoogle2 = document.createElement('button');
-  buttonGoogle2.classList = 'btn_google2';
-  buttonGoogle2.type = 'button';
-  buttonGoogle2.textContent = 'SIGN IN WITH GOOGLE';
-
-  const imagenGoogle2 = document.createElement('img');
-  imagenGoogle2.classList = 'google_img2';
-  imagenGoogle2.src = '../assets/img/cromo5.png';
-  imagenGoogle2.alt = 'imagen de google';
-  buttonGoogle2.appendChild(imagenGoogle2);
-
-  const spanPass = document.createElement('label');
-  spanPass.textContent = '👀';
-  spanPass.className = 'ojito_login';
-  const cajaOjito2 = document.createElement('div');
-  cajaOjito2.className = 'caja_ojito2';
-  cajaOjito2.appendChild(pass);
-  cajaOjito2.appendChild(spanPass);
-  grupo1.appendChild(labelEmail);
-  grupo2.appendChild(labelPass);
-  grupo1.appendChild(email);
-  divForm.appendChild(grupo1);
-  divForm.appendChild(grupo2);
-  grupo2.appendChild(cajaOjito2);
+  buttonSubmit.textContent = 'Login';
+  buttonSubmit.classList = 'btn_form_login';
+  buttonSubmit.type = 'submit';
+  const buttonGoogle = document.createElement('button');
+  const imgGoogle = document.createElement('img');
+  imgGoogle.className = 'imgGoogleL';
+  imgGoogle.src = '../assets/img/google (1).png';
+  buttonGoogle.appendChild(imgGoogle);
+  buttonGoogle.classList = 'btn_googleL';
   divForm.appendChild(buttonSubmit);
-  divForm.appendChild(buttonGoogle2);
-  grupo2.className = 'grupos2';
-  grupo1.className = 'grupos2';
+  divForm.appendChild(buttonGoogle);
+
+  botonClose.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
   spanPass.addEventListener('click', () => {
     if (pass.type === 'password') {
       pass.type = 'text';
@@ -92,21 +143,31 @@ export const Login = (onNavigate) => {
       pass.type = 'password';
     }
   });
-  buttonSubmit.type = 'submit';
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    formulariologin(email.value, pass.value).then((res) => {
-      onNavigate(Rutas(res));
+    formulariologin(email.value, pass.value).then(() => {
+      onNavigate(Rutas('login'));
       form.reset();
     }).catch((err) => {
-      modalMensaje(err);
+      modal.style.display = 'block';
+
+      mensajeModal.innerText = err.code;
+    });
+  });
+  buttonGoogle.addEventListener('click', () => {
+    formularioGoogle().then(() => {
+      onNavigate(Rutas('registro'));
+    }).catch((err) => {
+      modal.style.display = 'block';
+
+      mensajeModal.innerText = err.code;
     });
   });
 
-  buttonGoogle2.addEventListener('click', () => {
-    formularioGoogle();
-    onNavigate('/Begin');
-  });
-
+  buttonHome.addEventListener('click', () => onNavigate('/'));
+  divLogin.appendChild(form);
+  divcontainer.appendChild(divLogin);
+  HomeDiv.appendChild(divcontainer);
   return HomeDiv;
 };

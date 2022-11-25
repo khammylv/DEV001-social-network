@@ -1,5 +1,3 @@
-/* eslint-disable import/no-unresolved */
-// eslint-disable-next-line import/no-unresolved
 import { onAuthStateChanged } from 'firebase/auth';
 import {
   auth, createPost, onGetTasks, deleteTasks, updateTask,
@@ -267,6 +265,7 @@ export const Begin = (onNavigate) => {
 
           editbtn.forEach((btn) => {
             btn.addEventListener('mouseup', (e) => {
+              console.log(e.target.id);
               const id = e.target.id;
               const carta = divPoster.querySelectorAll('.cardCont');
               // eslint-disable-next-line no-plusplus
@@ -287,12 +286,12 @@ export const Begin = (onNavigate) => {
                   btnsend.addEventListener('click', () => {
                     updateTask(id, {
                       post: tt.value,
-
-                    }).then(() => {
-                      // window.location.reload();
-                      // divPoster.innerHTML = '';
-                      // onGetTasks(querySnapshot);
                     });
+                    // }).then(() => {
+                    //   window.location.reload();
+                    //   // divPoster.innerHTML = '';
+                    //   // onGetTasks(querySnapshot);
+                    // });
                   });
                 }
               }
