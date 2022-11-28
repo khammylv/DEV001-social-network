@@ -125,27 +125,15 @@ export const Profile = (onNavigate) => {
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
+      modal.style.display = 'block';
+      contenedorPerfil.style.display = 'block';
       if (user !== null) {
         nombre.value = user.displayName;
         imgPerfil.value = user.photoURL;
-        HomeDiv.appendChild(modal);
-        HomeDiv.appendChild(contenedorPerfil);
       }
     } else {
-      const divMensajeError = document.createElement('div');
-      divMensajeError.className = 'error_mensaje';
-      const mensajeError = document.createElement('h1');
-      mensajeError.innerText = 'Unauthorized user';
-      divMensajeError.appendChild(mensajeError);
-      const botonError = document.createElement('button');
-      botonError.className = 'boton_error';
-      botonError.innerText = 'Go to HOME';
-      botonError.addEventListener('click', () => {
-        onNavigate('/');
-        window.location.reload();
-      });
-      divMensajeError.appendChild(botonError);
-      HomeDiv.appendChild(divMensajeError);
+      modal.style.display = 'none';
+      contenedorPerfil.style.display = 'none';
     }
   });
 
@@ -162,6 +150,7 @@ export const Profile = (onNavigate) => {
       mensajeModal.innerText = err.code;
     });
   });
-
+  HomeDiv.appendChild(modal);
+  HomeDiv.appendChild(contenedorPerfil);
   return HomeDiv;
 };

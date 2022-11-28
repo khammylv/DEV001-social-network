@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import { onAuthStateChanged } from 'firebase/auth';
 import {
-  auth, createPost, onGetTasks, deleteTasks, updateTask,
+  auth, createPost, onGetTasks, deleteTasks, updateTask, signOut,
 } from '../lib/index.js';
 
 export const Begin = (onNavigate) => {
@@ -129,7 +129,7 @@ export const Begin = (onNavigate) => {
   });
   salir.addEventListener('click', (e) => {
     e.preventDefault();
-    auth.signOut().then(() => {
+    signOut().then(() => {
       onNavigate('/');
       window.location.reload();
     });
@@ -173,6 +173,9 @@ export const Begin = (onNavigate) => {
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
+      headerMenu.style.display = 'block';
+      sectionBody.style.display = 'block';
+      divPoster.style.display = 'block';
       if (user !== null) {
         const displayName = user.displayName;
         // const email = user.email;
@@ -294,27 +297,16 @@ export const Begin = (onNavigate) => {
             });
           });
         });
-        HomeDiv.appendChild(headerMenu);
-        HomeDiv.appendChild(sectionBody);
-        HomeDiv.appendChild(divPoster);
       }
     } else {
-      const divMensajeError = document.createElement('div');
-      divMensajeError.className = 'error_mensaje';
-      const mensajeError = document.createElement('h1');
-      mensajeError.innerText = 'Unauthorized user';
-      divMensajeError.appendChild(mensajeError);
-      const botonError = document.createElement('button');
-      botonError.className = 'boton_error';
-      botonError.innerText = 'Go to HOME';
-      botonError.addEventListener('click', () => {
-        onNavigate('/');
-        window.location.reload();
-      });
-      divMensajeError.appendChild(botonError);
-      HomeDiv.appendChild(divMensajeError);
+      headerMenu.style.display = 'none';
+      sectionBody.style.display = 'none';
+      divPoster.style.display = 'none';
     }
   });
 
+  HomeDiv.appendChild(headerMenu);
+  HomeDiv.appendChild(sectionBody);
+  HomeDiv.appendChild(divPoster);
   return HomeDiv;
 };
