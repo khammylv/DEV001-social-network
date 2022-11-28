@@ -7,6 +7,7 @@ export class GoogleAuthProvider {
     checkapp(app);
   }
 }
+// estos son los mock de firebase
 export const createUserWithEmailAndPassword = jest.fn().mockResolvedValue({
   user: { email: 'jaja@gmail.com' },
 });
