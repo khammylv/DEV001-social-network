@@ -125,7 +125,6 @@ export const Profile = (onNavigate) => {
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      modal.style.display = 'block';
       contenedorPerfil.style.display = 'block';
       if (user !== null) {
         nombre.value = user.displayName;
