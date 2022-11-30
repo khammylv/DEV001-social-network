@@ -1,5 +1,4 @@
-import { updateProfile, onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../lib/index.js';
+import { viewUser, updateUser } from '../lib/index.js';
 import { Rutas } from '../lib/rutas.js';
 // updateProfile,
 export const Profile = (onNavigate) => {
@@ -118,12 +117,12 @@ export const Profile = (onNavigate) => {
   buttonSubmit.textContent = 'Enviar';
   buttonSubmit.className = 'btn_submit';
   divForm.appendChild(buttonSubmit);
-
+  modal.style.display = 'none';
   botonClose.addEventListener('click', () => {
     modal.style.display = 'none';
   });
 
-  onAuthStateChanged(auth, (user) => {
+  viewUser((user) => {
     if (user) {
       contenedorPerfil.style.display = 'block';
       if (user !== null) {
@@ -138,10 +137,7 @@ export const Profile = (onNavigate) => {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-
-    updateProfile(auth.currentUser, {
-      displayName: nombre.value, photoURL: imgPerfil.value,
-    }).then(() => {
+    updateUser(nombre.value, imgPerfil.value).then(() => {
       onNavigate(Rutas('perfil'));
       window.location.reload();
     }).catch((err) => {
