@@ -1,8 +1,11 @@
 // funciones puras//
-// eslint-disable-next-line import/no-duplicates, import/no-unresolved
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-// eslint-disable-next-line import/no-duplicates
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import {
+  getAuth, createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  GoogleAuthProvider, signInWithPopup,
+  onAuthStateChanged, updateProfile,
+} from 'firebase/auth';
+
 import {
   collection, addDoc, onSnapshot, deleteDoc, doc, updateDoc,
 } from 'firebase/firestore';
@@ -27,3 +30,7 @@ export const onGetTasks = (callback) => onSnapshot(collection(db, 'postMusic'), 
 export const deleteTasks = (id) => deleteDoc(doc(db, 'postMusic', id));
 export const updateTask = (id, newFields) => updateDoc(doc(db, 'postMusic', id), newFields);
 export const signOut = () => auth.signOut();
+export const viewUser = (user) => onAuthStateChanged(auth, user);
+export const updateUser = (nombre, imgPerfil) => updateProfile(auth.currentUser, {
+  displayName: nombre, photoURL: imgPerfil,
+});

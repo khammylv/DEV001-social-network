@@ -47,4 +47,16 @@ describe('test de registro', () => {
     ojito2.click();
     expect(pass.type).toBe('text');
   });
+
+  // it('Register click', () => {
+  //   const elemento = Register();
+  //   const form = elemento.querySelector('form');
+
+  //   // buscar el input del email
+
+  //   // escribir el email
+
+  //   from.submit();
+  //   expect(// input.value).toBe('');
+  // });
 });

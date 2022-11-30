@@ -7,14 +7,6 @@ describe('test de begin', () => {
   it('debería ser una función', () => {
     expect(typeof Begin).toBe('function');
   });
-  it('Existe el boton cerrar modal', () => {
-    const elemento = Begin();
-    const modal = elemento.querySelector('.modal');
-    const boton = elemento.querySelector('.close');
-    expect(boton).not.toBeNull();
-    boton.click();
-    expect(modal.style.display).toBe('none');
-  });
   it('Activar menu lateral', () => {
     const elemento = Begin();
     const botonMenu = elemento.querySelector('.imgMenu');
