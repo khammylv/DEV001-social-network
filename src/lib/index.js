@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 // funciones puras//
 import {
   getAuth, createUserWithEmailAndPassword,

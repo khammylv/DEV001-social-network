@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { formulariologin, formularioGoogle } from '../lib/index.js';
 import { Rutas } from '../lib/rutas.js';
 

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import {
   signOut, viewUser,
 } from '../lib/index.js';

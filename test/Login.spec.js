@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { Login } from '../src/component/Login.js';
 
 jest.mock('../src/__mocks__/main.js');
