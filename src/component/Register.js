@@ -73,6 +73,7 @@ export const Register = (onNavigate) => {
   divRegisro.appendChild(divImgContainer);
   // formulario
   const form = document.createElement('form');
+  form.className = 'formulario_registro';
   // div formulario
   const divForm = document.createElement('div');
   divForm.className = 'formularioRegistro';

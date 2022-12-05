@@ -67,6 +67,7 @@ export const Begin = (onNavigate) => {
   aHome.innerText = 'profile';
   listasMenu.appendChild(liHome);
   const salir = document.createElement('li');
+  salir.className = 'salir';
   const aSalir = document.createElement('a');
   const iconoSalir = document.createElement('img');
   iconoSalir.src = '../assets/img/cerrar-sesion.png';
