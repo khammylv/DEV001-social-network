@@ -196,7 +196,10 @@
     padding-left: 10px;
 
 }
-
+.cajaText:focus{
+    color: rgb(168, 24, 168);
+    
+}
 .cajaName {
     width: 90%;
     height: 10%;
