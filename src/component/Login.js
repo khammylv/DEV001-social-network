@@ -75,7 +75,7 @@ export const Login = (onNavigate) => {
 
   // formulario
   const form = document.createElement('form');
-
+  form.className = 'form_login';
   // div formulario
   const divForm = document.createElement('div');
   divForm.className = 'formulariologin';
