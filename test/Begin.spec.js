@@ -45,10 +45,11 @@ describe('signOut', () => {
   it('Deberia retornar una promesa resuelta', async () => {
     await expect(signOut()).resolves.toBe('resolve');
   });
-  it('desactivar menu lateral', async () => {
+  it('desactivar menu lateral', () => {
     const elemento = Begin();
     const botonSalir = elemento.querySelector('.salir');
     botonSalir.click();
-    await expect(signOut()).resolves.toBe('resolve');
+    // eslint-disable-next-line jest/valid-expect
+    expect(signOut()).resolves.toBe('resolve');
   });
 });

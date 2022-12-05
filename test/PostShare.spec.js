@@ -3,6 +3,7 @@ import { viewUser, createPost } from '../src/lib/index.js';
 
 jest.mock('firebase/auth');
 jest.mock('../src/lib/index.js');
+jest.mock('../src/__mocks__/main.js');
 describe('test de funcion eliminar post', () => {
   it('debería ser una función', () => {
     expect(typeof Share).toBe('function');
