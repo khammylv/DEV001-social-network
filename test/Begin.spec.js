@@ -5,7 +5,7 @@ import { signOut } from '../src/lib/index.js';
 jest.mock('../src/__mocks__/main.js');
 jest.mock('firebase/auth');
 jest.mock('../src/lib/index.js');
-
+// estos son los test
 describe('test de begin', () => {
   it('debería ser una función', () => {
     expect(typeof Begin).toBe('function');
