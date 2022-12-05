@@ -1,6 +1,8 @@
 import { Login } from '../src/component/Login.js';
+import { Rutas } from '../src/lib/rutas.js';
+import { formulariologin, formularioGoogle } from '../src/lib/index.js';
 
-jest.mock('../src/__mocks__/main.js');
+jest.mock('../src/lib/index.js');
 jest.mock('firebase/auth');
 
 describe('test de login', () => {
@@ -29,17 +31,47 @@ describe('test de login', () => {
     const elemento = Login();
     const ojito2 = elemento.querySelector('.ojito');
     const pass = elemento.querySelector('.passLogin');
-    pass.type = 'text';
     expect(ojito2).not.toBeNull();
+    ojito2.click();
+    expect(pass.type).toBe('text');
     ojito2.click();
     expect(pass.type).toBe('password');
   });
-  it('cambia el class', () => {
+  it('form correcto', () => {
     const elemento = Login();
-    const ojito2 = elemento.querySelector('.ojito');
+    const form = elemento.querySelector('.form_login');
+    const email = elemento.querySelector('.emailLogin');
     const pass = elemento.querySelector('.passLogin');
-    pass.type = 'password';
-    ojito2.click();
-    expect(pass.type).toBe('text');
+    email.value = 'camila01@gmail.com';
+    pass.value = '123hdfh';
+    form.submit();
+    form.reset();
+    expect(email.value).toBe('');
+    expect(pass.value).toBe('');
+    expect(Rutas('login')).toBe('/Begin');
+  });
+  it('form incorrecto', () => {
+    const elemento = Login();
+    const form = elemento.querySelector('.form_login');
+    const email = elemento.querySelector('.emailLogin');
+    const pass = elemento.querySelector('.passLogin');
+    const modal = elemento.querySelector('.modal');
+    email.value = 'camill@gmail.com';
+    pass.value = '123hdfh';
+    form.submit();
+    const promise = formulariologin('camill@gmail.com', '123hdfh');
+    promise
+      .catch((err) => {
+        expect(err.code).toBe('auth/email-already-in-use');
+        modal.style.display = 'block';
+        expect(modal.style.display).toBe('block');
+      });
+  });
+  it('register con google', () => {
+    const elemento = Login();
+    const boton = elemento.querySelector('.btn_googleL');
+    formularioGoogle.mockImplementationOnce(() => Promise.resolve({}));
+    boton.click();
+    expect(Rutas('google')).toBe('/Begin');
   });
 });
