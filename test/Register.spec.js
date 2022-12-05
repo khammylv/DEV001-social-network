@@ -3,6 +3,7 @@ import { Rutas } from '../src/lib/rutas.js';
 import { formularioregistro, formularioGoogle } from '../src/lib/index.js';
 
 jest.mock('../src/lib/index.js');
+jest.mock('../src/__mocks__/main.js');
 jest.mock('firebase/auth');
 
 describe('test de registro', () => {
