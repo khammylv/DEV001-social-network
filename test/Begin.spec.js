@@ -1,4 +1,4 @@
-import { getAuth } from 'firebase/auth';
+// import { getAuth } from 'firebase/auth';
 import { Begin } from '../src/component/Begin.js';
 import { signOut } from '../src/lib/index.js';
 
@@ -27,29 +27,33 @@ describe('test de begin', () => {
     botonMenu.click();
     expect(menuLateral.style.display).toBe('none');
   });
-});
-describe('signOut', () => {
-  beforeEach(() => {
-    getAuth.mockImplementationOnce(() => 'hola');
-    signOut.mockImplementationOnce(() => Promise.resolve('resolve'));
-  });
-
   it('Debería ser una función', () => {
     expect(typeof signOut).toBe('function');
   });
-
-  it('Deberia retornar una promesa', () => {
-    expect(signOut()).toBeInstanceOf(Promise);
-  });
-
-  it('Deberia retornar una promesa resuelta', async () => {
-    await expect(signOut()).resolves.toBe('resolve');
-  });
-  it('desactivar menu lateral', () => {
-    const elemento = Begin();
-    const botonSalir = elemento.querySelector('.salir');
-    botonSalir.click();
-    // eslint-disable-next-line jest/valid-expect
-    expect(signOut()).resolves.toBe('resolve');
-  });
 });
+// describe('signOut', () => {
+//   beforeEach(() => {
+//     getAuth.mockImplementationOnce(() => 'hola');
+//     signOut.mockImplementationOnce(() => Promise.resolve('resolve'));
+//   });
+
+//   it('Debería ser una función', () => {
+//     expect(typeof signOut).toBe('function');
+//   });
+
+//   it('Deberia retornar una promesa', () => {
+//     expect(signOut()).toBeInstanceOf(Promise);
+//   });
+
+//   it('Deberia retornar una promesa resuelta', () => {
+//     // eslint-disable-next-line jest/valid-expect
+//     expect(signOut()).resolves.toBe('resolve');
+//   });
+//   it('boton de salir', () => {
+//     const elemento = Begin();
+//     const botonSalir = elemento.querySelector('.salir');
+//     botonSalir.click();
+//     // eslint-disable-next-line jest/valid-expect
+//     expect(signOut()).resolves.toBe('resolve');
+//   });
+// });
