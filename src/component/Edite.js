@@ -3,6 +3,11 @@ import {
   updateTask,
 } from '../lib/index.js';
 
+const updateTaskHandler = (id, tt) => {
+  updateTask(id, {
+    post: tt.value,
+  });
+};
 export const EditePost = () => {
   const poste = document.querySelector('.cajapost');
   const editbtn = poste.querySelectorAll('.edit_img');
@@ -25,11 +30,7 @@ export const EditePost = () => {
 
           const btnsend = cartaInd.querySelector('.btnSaveImage');
           // eslint-disable-next-line no-loop-func
-          btnsend.addEventListener('click', () => {
-            updateTask(id, {
-              post: tt.value,
-            });
-          });
+          btnsend.addEventListener('click', () => updateTaskHandler(id, tt));
         }
       }
     });
