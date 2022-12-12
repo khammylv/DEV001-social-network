@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 // import { getAuth } from 'firebase/auth';
 import { Begin } from '../src/component/Begin.js';
 import { signOut } from '../src/lib/index.js';

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import {
   onGetTasks, viewUser,
 } from '../lib/index.js';
@@ -27,6 +28,25 @@ export const Post = () => {
           cajaName.className = 'cajaName';
           cajaName.innerText = postUS.name;
           cardDiv.appendChild(cajaName);
+
+          // caja Like
+          const cajaLike = document.createElement('div');
+          cajaLike.className = 'cajaLike';
+          cajaName.appendChild(cajaLike);
+          const btnLike = document.createElement('button');
+          btnLike.type = 'submit';
+          btnLike.className = 'btnLike';
+          cajaLike.appendChild(btnLike);
+          const botonLike = document.createElement('img');
+          botonLike.className = 'botonLike';
+          botonLike.src = '../assets/img/heart.png';
+          btnLike.appendChild(botonLike);
+          const contador = document.createElement('input');
+          contador.type = 'number';
+          contador.value = '0';
+          contador.className = 'contador';
+          cajaLike.appendChild(contador);
+
           const cajaIcon = document.createElement('div');
           cajaIcon.className = 'cajaIcon';
           cardDiv.appendChild(cajaIcon);
@@ -56,13 +76,15 @@ export const Post = () => {
           liEdit.src = '../assets/img/edit.png';
           btnEdit.appendChild(liEdit);
           btnDelete.appendChild(liDelete);
-
           const postFilter = doc.data().id === user.uid;
           if (postFilter) {
             cajaIcon.appendChild(btnDelete);
             liDelete.setAttribute('id', doc.id);
             cajaIcon.appendChild(btnEdit);
             liEdit.setAttribute('id', doc.id);
+            // para like
+            // btnLike.setAttribute('id', doc.id);
+
             cajaEdit.appendChild(btnSaveText);
           }
           contenedorCaja.appendChild(cardDiv);
