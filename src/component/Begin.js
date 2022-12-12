@@ -92,6 +92,7 @@ export const Begin = (onNavigate) => {
   liHome.addEventListener('click', (e) => {
     e.preventDefault();
     onNavigate('/profile');
+    asideMenu.style.display = 'none';
     // window.location.reload();
   });
   viewUser((user) => {

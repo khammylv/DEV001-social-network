@@ -10,14 +10,14 @@ const likeHandler = (id, likes) => {
 };
 
 export const likePost = (user) => {
-  const poste = document.querySelector('.cajaPost');
-  const likeBtn = poste.querySelectorAll('btnlike');
+  const poste = document.querySelector('.cajapost');
+  const likeBtn = poste.querySelectorAll('.btnLike');
   likeBtn.forEach((likes) => {
-    likes.addEventlistener('mouseup', (e) => {
+    likes.addEventListener('mouseup', (e) => {
       const id = e.target.id;
       onGetTask(id).then((res) => {
         const post = res.data();
-        if (!post.like.incluides(user)) {
+        if (!post.like.includes(user)) {
           const likesNew = [...post.like, user];
           likeHandler(id, likesNew);
         } else {
