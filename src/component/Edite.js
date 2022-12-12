@@ -30,9 +30,20 @@ export const EditePost = () => {
 
           const btnsend = cartaInd.querySelector('.btnSaveImage');
           // eslint-disable-next-line no-loop-func
-          btnsend.addEventListener('click', () => updateTaskHandler(id, tt));
+          btnsend.addEventListener('click', () => {
+            updateTaskHandler(id, tt);
+            tt.disabled = true;
+            cajaicon.style.display = 'flex';
+            btnedit.style.display = 'none';
+          });
         }
       }
     });
+  });
+};
+
+export const namePost = (id, name) => {
+  updateTask(id, {
+    name,
   });
 };
