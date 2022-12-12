@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { Register } from '../src/component/Register.js';
 import { Rutas } from '../src/lib/rutas.js';
 import { formularioregistro, formularioGoogle } from '../src/lib/index.js';

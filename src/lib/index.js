@@ -30,6 +30,11 @@ export const createPost = (postUs, idUs, nameUs) => addDoc(collection(db, 'postM
 export const onGetTasks = (callback) => onSnapshot(collection(db, 'postMusic'), callback);
 export const deleteTasks = (id) => deleteDoc(doc(db, 'postMusic', id));
 export const updateTask = (id, newFields) => updateDoc(doc(db, 'postMusic', id), newFields);
+
+// creado para likes
+// export const updateLikes = (id, likes) => updateDoc(doc(db, 'postMusic', id), likes);
+// export const getSavePosts = (id) => { getDoc(doc(db, 'postMusic', id)); };
+
 export const signOut = () => auth.signOut();
 export const viewUser = (user) => onAuthStateChanged(auth, user);
 export const updateUser = (nombre, imgPerfil) => updateProfile(auth.currentUser, {

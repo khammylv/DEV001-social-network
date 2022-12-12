@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import {
   createPost, viewUser,
 } from '../lib/index.js';
@@ -21,11 +22,23 @@ export const Share = () => {
   botonPost.type = 'submit';
   botonPost.textContent = 'Post';
   botonPost.className = 'botonPost';
+
+  // caja Like
+  // const cajaLike = document.createElement('div');
+  // cajaLike.className = 'cajaLike';
+  // const btnLike = document.createElement('button');
+  // btnLike.type = 'submit';
+  // btnLike.className = 'btnLike';
+
   sectionBody.appendChild(formPost);
   formPost.appendChild(cajaTexForm);
   cajaTexForm.appendChild(textoPost);
   formPost.appendChild(cajabtn);
   cajabtn.appendChild(botonPost);
+
+  // formPost.appendChild(cajaLike);
+  // cajaLike.appendChild(btnLike);
+
   const divPoster = document.createElement('section');
   divPoster.className = 'cajapost';
   viewUser((user) => {
