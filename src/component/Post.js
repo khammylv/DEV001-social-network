@@ -79,8 +79,6 @@ export const Post = () => {
             liDelete.setAttribute('id', doc.id);
             cajaIcon.appendChild(btnEdit);
             liEdit.setAttribute('id', doc.id);
-            // para like
-            // btnLike.setAttribute('id', doc.id);
 
             cajaEdit.appendChild(btnSaveText);
           }
@@ -99,7 +97,6 @@ export const Post = () => {
     }
   });
 
-  // poster.appendChild(Delete());
   poster.appendChild(divPoster);
   return poster;
 };
