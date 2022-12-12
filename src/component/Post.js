@@ -4,6 +4,7 @@ import {
 } from '../lib/index.js';
 import { EditePost, namePost } from './Edite.js';
 import { Delete } from './DeletePost.js';
+import { likePost } from './Like.js';
 
 export const Post = () => {
   const poster = document.createElement('div');
@@ -91,6 +92,7 @@ export const Post = () => {
         divPoster.appendChild(contenedorCaja);
         EditePost();
         poster.appendChild(Delete());
+        likePost(user.uid);
       });
     } else {
       poster.style.display = 'none';
