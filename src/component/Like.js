@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import {
   updateTask, onGetTask,
 } from '../lib/index.js';
