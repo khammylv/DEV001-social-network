@@ -46,7 +46,8 @@ export const Share = () => {
       if (user !== null) {
         formPost.addEventListener('submit', async (e) => {
           e.preventDefault();
-          createPost(textoPost.value, user.uid, user.displayName);
+          const likeus = 0;
+          createPost(textoPost.value, user.uid, user.displayName, likeus);
           formPost.reset();
         });
       }

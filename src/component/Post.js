@@ -2,7 +2,7 @@
 import {
   onGetTasks, viewUser,
 } from '../lib/index.js';
-import { EditePost } from './Edite.js';
+import { EditePost, namePost } from './Edite.js';
 import { Delete } from './DeletePost.js';
 import { likePost } from './like.js';
 
@@ -17,7 +17,6 @@ export const Post = () => {
         const contenedorCaja = document.createElement('div');
         contenedorCaja.className = 'contenedorCaja';
         querySnapshot.forEach((doc) => {
-          console.log(doc);
           const postUS = doc.data();
           const cardDiv = document.createElement('div');
           cardDiv.className = 'cardCont';
@@ -35,16 +34,13 @@ export const Post = () => {
           cajaLike.className = 'cajaLike';
           cajaName.appendChild(cajaLike);
           const btnLike = document.createElement('button');
-          btnLike.type = 'submit';
           btnLike.className = 'btnLike';
+          btnLike.innerText = '❤';
+          btnLike.setAttribute('id', doc.id);
           cajaLike.appendChild(btnLike);
-          const botonLike = document.createElement('img');
-          botonLike.className = 'botonLike';
-          botonLike.src = '../assets/img/heart.png';
-          btnLike.appendChild(botonLike);
-          const contador = document.createElement('input');
-          contador.type = 'number';
-          contador.value = '0';
+          const contador = document.createElement('p');
+          const numLikes = postUS.like.length - 1;
+          contador.innerText = numLikes;
           contador.className = 'contador';
           cajaLike.appendChild(contador);
 
@@ -79,6 +75,7 @@ export const Post = () => {
           btnDelete.appendChild(liDelete);
           const postFilter = doc.data().id === user.uid;
           if (postFilter) {
+            namePost(doc.id, user.displayName);
             cajaIcon.appendChild(btnDelete);
             liDelete.setAttribute('id', doc.id);
             cajaIcon.appendChild(btnEdit);
@@ -87,6 +84,9 @@ export const Post = () => {
             // btnLike.setAttribute('id', doc.id);
 
             cajaEdit.appendChild(btnSaveText);
+          }
+          if (postUS.like.includes(user.uid)) {
+            btnLike.style.color = 'red';
           }
           contenedorCaja.appendChild(cardDiv);
         });
