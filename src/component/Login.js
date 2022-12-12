@@ -159,7 +159,7 @@ export const Login = (onNavigate) => {
   });
   buttonGoogle.addEventListener('click', () => {
     formularioGoogle().then(() => {
-      onNavigate(Rutas('registro'));
+      onNavigate(Rutas('google'));
     }).catch((err) => {
       modal.style.display = 'block';
 
