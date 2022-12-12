@@ -29,6 +29,7 @@ export const createPost = jest.fn((post, name, id) => Promise.resolve({ Post: { 
 //   }
 //   return '';
 // });
+// jest.fn(); retorna un objeto mock
 export const formularioGoogle = jest.fn();
 export const onGetTasks = jest.fn();
 export const deleteTasks = jest.fn();
