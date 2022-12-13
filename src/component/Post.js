@@ -59,18 +59,25 @@ export const Post = () => {
           btnSaveText.className = 'btnSaveText';
           const imgSave = document.createElement('img');
           imgSave.className = 'btnSaveImage';
-          imgSave.src = '../assets/img/send.png';
+          imgSave.src = '../assets/img/plane.png';
           btnSaveText.appendChild(imgSave);
           const btnDelete = document.createElement('button');
           btnDelete.className = 'btnDelete';
           const btnEdit = document.createElement('button');
           btnEdit.className = 'btnEdit';
+
+          const notas = document.createElement('img');
+          notas.className = 'notas';
+          notas.src = '../assets/img/music-notes.png';
+          cardDiv.appendChild(notas);
+
           const liDelete = document.createElement('img');
           liDelete.className = 'delete_img';
-          liDelete.src = '../assets/img/delete.png';
+          liDelete.src = '../assets/img/bin.png';
           const liEdit = document.createElement('img');
           liEdit.className = 'edit_img';
-          liEdit.src = '../assets/img/edit.png';
+          liEdit.src = '../assets/img/writing.png';
+
           btnEdit.appendChild(liEdit);
           btnDelete.appendChild(liDelete);
           const postFilter = doc.data().id === user.uid;

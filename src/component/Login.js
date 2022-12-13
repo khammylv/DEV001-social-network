@@ -50,6 +50,10 @@ export const Login = (onNavigate) => {
   // cont div registro
   const divLogin = document.createElement('div');
   divLogin.className = 'con_form_login';
+  // imagen de login
+  const imgLogin = document.createElement('div');
+  imgLogin.className = 'imgLogin';
+  divcontainer.appendChild(imgLogin);
 
   // boton retorno
   const divBoton = document.createElement('div');
@@ -64,7 +68,7 @@ export const Login = (onNavigate) => {
   // div titulo y textos
   const divBienvenida2 = document.createElement('div');
   const mensajeBienvenida2 = document.createElement('h2');
-  mensajeBienvenida2.textContent = 'Welcome to lymusic';
+  mensajeBienvenida2.textContent = 'Welcome';
   divBienvenida2.appendChild(mensajeBienvenida2);
   divBienvenida2.className = 'mensajeBienvenida2';
   divcontainer.appendChild(divBienvenida2);

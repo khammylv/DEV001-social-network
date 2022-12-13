@@ -1,12 +1,16 @@
 .bienvenida {
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to top, rgba(0, 122, 223, 0.5) 0%, #00ecbc 100%), url(../img/sinFondo.png);
-    background-attachment: fixed;
+background-image: url(../img/musica2.jpg);  
+  background-attachment: fixed;
+background-repeat: no-repeat;
     background-position: center;
-
+    background-size: cover;
+    position: relative;
     /*background: linear-gradient(to bottom, rgba(17, 15, 15, 0.5) 0%, rgba(0, 0, 0, 0.6) 40%, rgb(0, 0, 0, 0.9) 150%), linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 200%)/*,url(../img/sinFondo.png);
  background-blend-mode: multiply;*/
+
+ 
 }
 
 /*cambiar en pc el height*/
@@ -14,11 +18,12 @@
     position: fixed;
     width: 100%;
     height: 60px;
-    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 100%);
     background: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%);
     /*background: linear-gradient(to right, rgba(0, 219, 222, 0.7) 0%, rgba(252, 0, 255, 0.7) 100%);
     /*background: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);*/
-
+background-image: url(../img/musica.jpg);
+    z-index: 2;
 }
 
 /*cambiar en pc*/
@@ -146,23 +151,22 @@
 .header_pagina h1 {
     font-weight: 700;
     font-size: 40px;
-    color: #7209b7;
+    color: white;
+    margin-top: 20px;
 }
 
 .header_pagina h3 {
-    color: #5390d9;
+    color: white;
 }
 
 .cajapost {
     width: 80%;
-
     margin: auto;
     padding-top: 50px;
 
 }
 
 .contenedorCaja {
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -170,13 +174,21 @@
 
 .cardCont {
     width: 250px;
-    height: 220px;
+    height: 160px;
     padding-top: 15px;
     background: rgba(0, 0, 0, 0.9);
     margin: auto;
     border-radius: 10px;
     box-shadow: 2px 2px 10px 0 rgba(255, 254, 254, 0.2);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+
+}
+.notas{
+    width: 40px;
+    position: relative;
+    top: -155px;
+    right: -210px;
+
 }
 
 .cajaPost {
@@ -242,13 +254,9 @@
 
 .btnEdit {
     border: none;
-
     align-items: center;
     padding-top: 5px;
-
     background: inherit;
-
-
 }
 
 .edit_img {
@@ -351,22 +359,27 @@
     background: linear-gradient(-225deg, #FF057C 0%, #8D0B93 50%, #321575 100%);
 }
 
-
 .btnLike {
     border: none;
     background: none;
-    font-size: 30px;
+    font-size: 20px;
     color: white;
-    width: 25px;
-    height: 25px;
-    margin: 5px;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
     cursor: pointer;
+    margin-bottom: 5px;
 }
 
 .botonLike {
-    width: 15px;
-    height: 15px;
-   
+    width: 10px;
+    height: 10px;
+    margin-top: 5px;
+}
+
+.cajaLike {
+    display: flex;
+    align-items: center;
 }
 
 .contador {
@@ -438,13 +451,13 @@
 
     .contenedorCaja {
         flex-direction: row;
-        gap: 15px;
+        gap: 25px;
         flex-wrap: wrap;
     }
 
     .cardCont {
-        width: 450px;
-        height: 400px;
+        width: 270px;
+        height: 250px;
 
     }
 
@@ -458,19 +471,21 @@
     }
 
     .delete_img {
-        width: 50px;
-        height: 50px;
+        margin-top: 15px;
+        width: 30px;
+        height:30px;
     }
 
     .btnEdit {
-        padding-top: 0px;
-        width: 50px;
-        height: 50px;
+
+        width: 30px;
+        height: 30px;
     }
 
     .edit_img {
-        width: 50px;
-        height: 50px;
+        margin-top: 2px;
+        width: 30px;
+        height: 30px;
     }
 
     .btnDelete {
@@ -501,18 +516,24 @@
     .sectionBody h3 {
         font-size: 25px;
         padding-bottom: 15px;
+        margin-top: -100px;
     }
 
     .btnLike {
-        width: 45px;
-        height: 45px;
-        margin: 10px;
+        width: 25px;
+        height: 25px;
+        font-size: 30px;
+        margin-right: 15px;
+        cursor: pointer;
+        margin-bottom: 10px;
     }
 
     .botonLike {
         width: 25px;
         height: 25px;
         cursor: pointer;
+        margin-top: 20px;
+
     }
 
     .contador {
@@ -525,4 +546,11 @@
         pointer-events: none;
 
     }
+        .notas {
+            width: 70px;
+            position: relative;
+            top: -250px;
+            right: -210px;
+        }
+
 }
