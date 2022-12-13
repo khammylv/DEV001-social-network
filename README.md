@@ -9,7 +9,7 @@
 * [5. Prototipo de alta fidelidad.
 * [6. Prototipo Mobile
 * [7. Definicion del producto.
-* [8. 
+ 
 
 ## 1. Proyecto
 
