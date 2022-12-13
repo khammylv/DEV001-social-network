@@ -9,6 +9,9 @@ export const Home = (onNavigate) => {
   const letraLogo = document.createElement('h1');
   letraLogo.className = 'letraLogo';
   letraLogo.textContent = 'Lymusic';
+  // caja de dibujo centro
+  const divCentro = document.createElement('div');
+  divCentro.className = 'divCentro';
 
   // caja de los botones
   const divBotones = document.createElement('div');
@@ -30,6 +33,7 @@ export const Home = (onNavigate) => {
   divBotones.appendChild(buttonLogin);
   contenedorTodo.appendChild(divLogo);
   contenedorTodo.appendChild(divBotones);
+  contenedorTodo.appendChild(divCentro);
   HomeDiv.appendChild(contenedorTodo);
   return HomeDiv;
 };
