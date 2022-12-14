@@ -37,7 +37,8 @@ usic![HU4](https://user-images.githubusercontent.com/113929552/207479854-90976ea
 ## 6.prototipo Mobile
 ![mobile 1](https://user-images.githubusercontent.com/113929552/207189811-0545ec7e-d661-4e10-a04e-f13c2f7c7421.png)
 ![foto mobile2](https://user-images.githubusercontent.com/113929552/207189853-da1fa161-dde6-429a-8424-44607be254d4.png)
-![foto mobile 3](https://user-images.githubusercontent.com/113929552/207189878-09716205-1c3d-4de0-9a5f-dbc013c1753c.png)
+![foto mobile 3](https://user-images.githubusercontent.com/113929552/207189878-09716205-1c3d-4de0-9a5f-dbc013c1753c.png)![HU4](https://user-images.githubusercontent.com/113929552/207479920-b61f5917-5652-48e8-b092-875b954f5314.png)
+
 
 ### 7 Definición del producto
 * los principales usuarios de este productos son aquellos amantes de la musica que quieran compartir las mejores letras y musicas de sus artistas favoritos.
