@@ -10,7 +10,7 @@ const PostHandler = (doc, id, user, name) => {
   const postUS = doc;
   const cardDiv = document.createElement('div');
   cardDiv.className = 'cardCont';
-  cardDiv.setAttribute('id', doc.id);
+  cardDiv.setAttribute('id', id);
 
   /* const notas = document.createElement('img');
   notas.className = 'notas';

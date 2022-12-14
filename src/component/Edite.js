@@ -21,6 +21,7 @@ export const EditePost = () => {
         let cartaInd;
         if (postCard) {
           cartaInd = carta[i];
+          console.log(cartaInd);
           const tt = cartaInd.querySelector('.cajaText');
           tt.disabled = false;
           const btnedit = cartaInd.querySelector('.cajaEdit');
