@@ -131,7 +131,7 @@ export const Login = (onNavigate) => {
   const buttonGoogle = document.createElement('button');
   const imgGoogle = document.createElement('img');
   imgGoogle.className = 'imgGoogleL';
-  imgGoogle.src = '../assets/img/google (1).png';
+  imgGoogle.src = 'https://i.postimg.cc/Vv17HkvB/google-1.png';
   buttonGoogle.appendChild(imgGoogle);
   buttonGoogle.classList = 'btn_googleL';
   divForm.appendChild(buttonSubmit);

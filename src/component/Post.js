@@ -56,7 +56,7 @@ const PostHandler = (doc, id, user, name) => {
   btnSaveText.className = 'btnSaveText';
   const imgSave = document.createElement('img');
   imgSave.className = 'btnSaveImage';
-  imgSave.src = '../assets/img/plane.png';
+  imgSave.src = 'https://i.postimg.cc/HWB4C2hC/plane.png';
   btnSaveText.appendChild(imgSave);
   const btnDelete = document.createElement('button');
   btnDelete.className = 'btnDelete';
@@ -65,10 +65,10 @@ const PostHandler = (doc, id, user, name) => {
 
   const liDelete = document.createElement('img');
   liDelete.className = 'delete_img';
-  liDelete.src = '../assets/img/Trash.png';
+  liDelete.src = 'https://i.postimg.cc/Dzk1cY81/Trash.png';
   const liEdit = document.createElement('img');
   liEdit.className = 'edit_img';
-  liEdit.src = '../assets/img/EditarB.png';
+  liEdit.src = 'https://i.postimg.cc/W4ThzRdY/EditarB.png';
 
   btnEdit.appendChild(liEdit);
   btnDelete.appendChild(liDelete);

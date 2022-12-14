@@ -17,7 +17,7 @@ export const NuestroEquipo = (onNavigate) => {
     <div class='card'>
         <div class='content-card'>
             <div class='people'>
-            <img src='../assets/img/Adrianafoto.png'/>
+            <img src='https://i.postimg.cc/MT5vk9tM/Adrianafoto.png'/>
             </div>
             <div class='texto-team'>
                 <h4>Adriana Araujo</h4>
@@ -37,7 +37,7 @@ export const NuestroEquipo = (onNavigate) => {
         </div>
         <div class='content-card'>
             <div class='people'>
-            <img src='../assets/img/Camilafoto.png'/>
+            <img src='https://i.postimg.cc/gcKB53WC/Camilafoto.png'/>
             </div>
            <div class='texto-team'>
                 <h4>Camila Leal</h4>
@@ -57,7 +57,7 @@ export const NuestroEquipo = (onNavigate) => {
         </div>
         <div class='content-card'>
              <div class='people'>
-                 <img src='../assets/img/lorenafoto.png'/>
+                 <img src='https://i.postimg.cc/ydHvp8r6/lorenafoto.png'/>
              </div>
              <div class='texto-team'>
                  <h4>Lorena Guillen</h4>
