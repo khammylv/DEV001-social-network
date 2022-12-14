@@ -17,19 +17,19 @@ export const NuestroEquipo = (onNavigate) => {
     <div class='card'>
         <div class='content-card'>
             <div class='people'>
-            <img src='../assets/img/centro.png'/>
+            <img src='../assets/img/Adrianafoto.png'/>
             </div>
             <div class='texto-team'>
-                <h4>cami</h4>
+                <h4>Adriana Araujo</h4>
                 <div class='social-media'>
-                  <a href='https://github.com/khammylv' target='_blank' class='social-media-icon'>
+                  <a href='https://github.com/ARAUJOVILLASMIL' target='_blank' class='social-media-icon'>
                       <i class='bx bxl-github'></i>
                   </a>
-                  <a href='https://www.linkedin.com/in/maria-camila-leal-vasquez'/' target='_blank'
+                  <a href='https://www.linkedin.com/in/araujo-adriana/'/' target='_blank'
                       class='social-media-icon'>
                       <i class='bx bxl-linkedin'></i>
                   </a>
-                  <a href='mailto:khammylv@gmail.com' class='social-media-icon'>
+                  <a href='mailto:araujovillasmil@gmail.com' class='social-media-icon'>
                       <i class='bx bx-mail-send'></i>
                   </a>
               </div>
@@ -37,10 +37,10 @@ export const NuestroEquipo = (onNavigate) => {
         </div>
         <div class='content-card'>
             <div class='people'>
-            <img src='../assets/img/centro.png'/>
+            <img src='../assets/img/Camilafoto.png'/>
             </div>
            <div class='texto-team'>
-                <h4>camila</h4>
+                <h4>Camila Leal</h4>
                 <div class='social-media'>
                 <a href='https://github.com/khammylv' target='_blank' class='social-media-icon'>
                     <i class='bx bxl-github'></i>
@@ -57,19 +57,20 @@ export const NuestroEquipo = (onNavigate) => {
         </div>
         <div class='content-card'>
              <div class='people'>
-                 <img src='../assets/img/centro.png'/>
+                 <img src='../assets/img/lorenafoto.png'/>
              </div>
              <div class='texto-team'>
-                 <h4>camm</h4>
+                 <h4>Lorena Guillen</h4>
                  <div class='social-media'>
-                 <a href='https://github.com/khammylv' target='_blank' class='social-media-icon'>
+                 <a href='https://github.com/Lorenaguillen' target='_blank' class='social-media-icon'>
                      <i class='bx bxl-github'></i>
                  </a>
-                 <a href='https://www.linkedin.com/in/maria-camila-leal-vasquez'/' target='_blank'
+                 <a href='https://www.linkedin.com/in/lorena-guillen-demichelli-03a8618b/
+                 ' target='_blank'
                      class='social-media-icon'>
                      <i class='bx bxl-linkedin'></i>
                  </a>
-                 <a href='mailto:khammylv@gmail.com' class='social-media-icon'>
+                 <a href='mailto:guillen.lorena88@gmail.com' class='social-media-icon'>
                      <i class='bx bx-mail-send'></i>
                  </a>
              </div>
