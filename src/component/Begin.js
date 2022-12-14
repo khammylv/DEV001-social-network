@@ -21,9 +21,12 @@ export const Begin = (onNavigate) => {
   const iconoMenu = document.createElement('label');
   iconoMenu.className = 'iconoMenu';
   headerPerfil.appendChild(iconoMenu);
-  const checkMenu = document.createElement('input');
-  checkMenu.type = 'checkbox';
+  const checkMenu = document.createElement('button');
   checkMenu.className = 'checkmenu';
+  const imgMenuH = document.createElement('img');
+  imgMenuH.className = 'checkMenuIcon';
+  imgMenuH.src = '../assets/img/menu-removebg-preview.png';
+  checkMenu.appendChild(imgMenuH);
   iconoMenu.appendChild(checkMenu);
   const imgMenu = document.createElement('span');
   imgMenu.className = 'imgMenu checkmenuImg';
@@ -70,16 +73,18 @@ export const Begin = (onNavigate) => {
   salir.className = 'salir';
   const aSalir = document.createElement('a');
   const iconoSalir = document.createElement('img');
-  iconoSalir.src = '../assets/img/cerrar-sesion.png';
+  iconoSalir.src = '../assets/img/log-out-regular-24.png';
   iconoSalir.className = 'iconoSalir';
   salir.appendChild(aSalir);
   aSalir.appendChild(iconoSalir);
   listasMenu.appendChild(salir);
-  imgMenu.addEventListener('click', () => {
+  imgMenuH.addEventListener('click', () => {
     if (asideMenu.style.display === 'block') {
       asideMenu.style.display = 'none';
+      imgMenuH.src = '../assets/img/menu-removebg-preview.png';
     } else {
       asideMenu.style.display = 'block';
+      imgMenuH.src = '../assets/img/close-removebg-preview.png';
     }
   });
   salir.addEventListener('click', (e) => {
@@ -92,6 +97,19 @@ export const Begin = (onNavigate) => {
   liHome.addEventListener('click', (e) => {
     e.preventDefault();
     onNavigate('/profile');
+    asideMenu.style.display = 'none';
+    imgMenuH.src = '../assets/img/menu-removebg-preview.png';
+  });
+  liContacto.addEventListener('click', () => {
+    onNavigate('/contacto');
+    asideMenu.style.display = 'none';
+    imgMenuH.src = '../assets/img/menu-removebg-preview.png';
+  });
+  aInicio.addEventListener('click', () => {
+    // document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    asideMenu.style.display = 'none';
+    imgMenuH.src = '../assets/img/menu-removebg-preview.png';
   });
   viewUser((user) => {
     if (user !== null) {

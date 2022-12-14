@@ -4,6 +4,7 @@ import { Register } from './component/Register.js';
 import { Login } from './component/Login.js';
 import { Begin } from './component/Begin.js';
 import { Profile } from './component/Profile.js';
+import { NuestroEquipo } from './component/Nosotras.js';
 
 const rootDiv = document.getElementById('root');
 
@@ -25,6 +26,7 @@ routes = {
   '/login': Login(onNavigate),
   '/Begin': Begin(onNavigate),
   '/profile': Profile(onNavigate),
+  '/contacto': NuestroEquipo(onNavigate),
 
 };
 

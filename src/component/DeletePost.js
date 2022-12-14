@@ -3,6 +3,9 @@ import {
   deleteTasks,
 } from '../lib/index.js';
 
+const deleteTaskHandler = (id) => {
+  deleteTasks(id);
+};
 export const Delete = () => {
   const poster = document.querySelector('.cajapost');
   // el fondo del modal
@@ -61,9 +64,8 @@ export const Delete = () => {
     btn.addEventListener('mouseup', (e) => {
       modal.style.display = 'block';
       botonModal.addEventListener('click', () => {
-        deleteTasks(e.target.id).then(() => {
-          modal.style.display = 'none';
-        });
+        deleteTaskHandler(e.target.id);
+        modal.style.display = 'none';
       });
     });
   });
