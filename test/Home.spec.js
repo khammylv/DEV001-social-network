@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { Home } from '../src/component/Home.js';
 
 jest.mock('../src/__mocks__/main.js');

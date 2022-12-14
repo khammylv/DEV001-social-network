@@ -22,7 +22,7 @@
     background-position: center;
     background-size: cover;
     position: relative;
-    
+
 
 }
 
@@ -106,7 +106,7 @@
         margin-left: 25%;
         z-index: 3;
         box-shadow: var(--sombra_botones);
-
+        border-radius: 30px;
     }
 
     .divBotones {
