@@ -10,12 +10,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}/*
+}
 #root{
-    width: 100%;
-    height: 100vh;
-}*/
-
+   background-color: black;
+   
+}
  :root{
   /* variables de home */
   --fondo_home: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
@@ -53,7 +52,12 @@
   --colorTextos: #feeafa;
   --colorTextos_login: #081c15;
   
-  
+  --color1: #ff0a54;
+  --titulos: 33px;
+  --margenes: 60px;
+  --espacios: 10px;
+  --espacios-contenido:45px;
+
  }
 
 

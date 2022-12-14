@@ -1,14 +1,19 @@
 .bienvenida {
     width: 100%;
     height: 100%;
-background-image: url(../img/musica2.jpg);  
-  background-attachment: fixed;
-background-repeat: no-repeat;
+    background: linear-gradient(to bottom, rgba(17, 15, 15, 0.2) 0%, rgba(0, 0, 0, 0.2) 40%, rgb(0, 0, 0, 0.2) 150%), linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 200%),url(../img/musica2.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-image: url(../img/musica2.jpg);  
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    position: relative;
+    
     /*background: linear-gradient(to bottom, rgba(17, 15, 15, 0.5) 0%, rgba(0, 0, 0, 0.6) 40%, rgb(0, 0, 0, 0.9) 150%), linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 200%)/*,url(../img/sinFondo.png);
- background-blend-mode: multiply;*/
+  background-blend-mode: multiply;*/
 
  
 }
@@ -61,34 +66,25 @@ background-image: url(../img/musica.jpg);
     margin-left: 20px;
 }
 
-/* Modificador para dar la imagen de checkbox */
-.checkmenuImg {
-    background-image: url(../img/menu-removebg-preview.png);
-}
-
-/* Oculta input original */
-.iconoMenu>.checkmenu {
-    display: none;
-}
-
-/*cambiar en pc*/
-/* Radio personalizado usando <span> */
-.iconoMenu>.imgMenu {
-    display: inline-block;
+.checkMenu{
     width: 40px;
     height: 40px;
-    background-size: cover;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.checkMenuIcon{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
 }
 
-/* Cambia el checkbox personalizado cuando es pulsado */
-.iconoMenu>.checkmenu:checked+.checkmenuImg {
-    background-image: url(../img/close-removebg-preview.png);
-}
 
 .asideMenu {
     width: 45%;
-    height: 250px;
-    background: linear-gradient(to top, rgba(232, 25, 139, 0.8) 0%, #c7eafd 100%);
+    height: 220px;
+    background : rgba(247, 37, 133, 0.7);
+    /*background: linear-gradient(to top, rgba(232, 25, 139, 0.8) 0%, #c7eafd 100%);*/
     display: none;
     transition: all 300ms ease;
     z-index: 10px;
@@ -101,12 +97,12 @@ background-image: url(../img/musica.jpg);
 
 .asideMenu .listasMenu a {
 
-    font-size: 15px;
-    color: #7209b7;
-    /*Se usa el display block para que el enlace respete el margin*/
+    font-size: 10px;
+    color: white;
     display: block;
     padding: 15px 0px;
     text-transform: uppercase;
+    font-weight: 700;
 }
 
 .asideMenu .listasMenu li {
@@ -124,12 +120,12 @@ background-image: url(../img/musica.jpg);
 }
 
 .asideMenu .listasMenu a:hover {
-    font-size: 15px;
-    padding: 10px 0px;
-    background: #7400b8;
-    text-transform: uppercase;
-    color: white;
-    transform: scale(1.1);
+    font-size: 10px;
+    padding: 10px 0px; 
+    background: #d9afd9;
+    text-transform: uppercase; 
+    color: rgba(247, 37, 133, 0.7);
+    font-weight: 700;
 }
 
 .iconoSalir {
@@ -148,15 +144,15 @@ background-image: url(../img/musica.jpg);
 
 }
 
-.header_pagina h1 {
+.header_pagina h1{
+    font-family: 'Aladin', cursive;
     font-weight: 700;
     font-size: 40px;
-    color: white;
-    margin-top: 20px;
+    color:#38f9d7;
 }
 
-.header_pagina h3 {
-    color: white;
+.header_pagina h3{
+  color: #88fde8;
 }
 
 .cajapost {
@@ -176,7 +172,7 @@ background-image: url(../img/musica.jpg);
     width: 250px;
     height: 160px;
     padding-top: 15px;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.7);
     margin: auto;
     border-radius: 10px;
     box-shadow: 2px 2px 10px 0 rgba(255, 254, 254, 0.2);
@@ -184,11 +180,18 @@ background-image: url(../img/musica.jpg);
 
 }
 .notas{
-    width: 40px;
+    width: 60px;
+    height: 60px;
+    display: inline;
     position: relative;
-    top: -155px;
     right: -210px;
-
+   /* position: relative;
+    display: inline;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    right: -210px;*/
+    
 }
 
 .cajaPost {
@@ -223,6 +226,7 @@ background-image: url(../img/musica.jpg);
     font-size: 15px;
     text-transform: uppercase;
     padding-top: 5px;
+    font-weight: 700;
 }
 
 .cajaIcon {
@@ -231,7 +235,7 @@ background-image: url(../img/musica.jpg);
     margin: auto;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding-top: 5px;
 
 }
@@ -246,10 +250,19 @@ background-image: url(../img/musica.jpg);
 
 }
 
+ .numLike{
+     padding-top: 5px;
+     margin-left: 5px;
+     color: white;
+     font-size: 15px;
+ }
 .delete_img {
     cursor: pointer;
     width: 25px;
     height: 25px;
+}
+.delete_img:hover{
+    box-shadow: 1px 1px 5px 5px rgb(219, 6, 6, 0.5);
 }
 
 .btnEdit {
@@ -263,6 +276,9 @@ background-image: url(../img/musica.jpg);
     cursor: pointer;
     width: 25px;
     height: 25px;
+}
+.edit_img:hover{
+    box-shadow: 1px 1px 5px 5px rgba(6, 219, 173, 0.5);
 }
 
 .cajaEdit {
@@ -392,6 +408,13 @@ background-image: url(../img/musica.jpg);
 
 
 @media (min-width: 900px) {
+    .bienvenida{
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
     .headerPerfil {
         width: 80%;
     }
@@ -411,11 +434,17 @@ background-image: url(../img/musica.jpg);
         box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.2);
     }
 
-    .iconoMenu>.imgMenu {
+    .checkmenu{
+        width: 60px;
+        height: 60px;
+        background: none;
+        border: none; 
+    }
+    .checkMenuIcon{
         width: 60px;
         height: 60px;
     }
-
+    
     .asideMenu {
         width: 20%;
         top: 100px;
@@ -430,19 +459,24 @@ background-image: url(../img/musica.jpg);
 
     .asideMenu .listasMenu a:hover {
         padding: 20px 10px;
+        font-size: 20px;
     }
-
+    .iconoSalir {
+        width: 40px;
+        height: 40px;
+    }
     .header_pagina {
-        height: 300px;
+        height: 400px;
+        padding-top: 150px
 
     }
 
     .header_pagina h1 {
-        font-size: 70px;
+        font-size: 150px;
     }
 
     .header_pagina h3 {
-        font-size: 40px;
+        font-size: 30px;
     }
 
     .cajapost {
@@ -456,11 +490,15 @@ background-image: url(../img/musica.jpg);
     }
 
     .cardCont {
-        width: 270px;
-        height: 250px;
+        width: 800px;
+        height: 300px;
 
     }
-
+    
+     .numLike{
+         font-size: 20px;
+         font-weight: 700;
+     }
     .cajaText {
         font-size: 25px;
 
@@ -499,8 +537,8 @@ background-image: url(../img/musica.jpg);
     }
 
     .formPost {
-        width: 500px;
-        height: 400px;
+        width: 800px;
+        height: 350px;
     }
 
     .textoPost {
@@ -511,12 +549,6 @@ background-image: url(../img/musica.jpg);
         width: 150px;
         height: 40px;
         font-size: 20px;
-    }
-
-    .sectionBody h3 {
-        font-size: 25px;
-        padding-bottom: 15px;
-        margin-top: -100px;
     }
 
     .btnLike {
@@ -546,11 +578,21 @@ background-image: url(../img/musica.jpg);
         pointer-events: none;
 
     }
-        .notas {
-            width: 70px;
+    .sectionBody h3{
+        font-size: 20px;
+        padding-bottom: 15px;
+    }
+    .sectionBody{
+        margin-top: 100px;
+    }
+    /*
+    .notas {
+           display: inline-block;
+            width: 40px;
+            height: 40px;
             position: relative;
             top: -250px;
             right: -210px;
-        }
+    }*/
 
 }
