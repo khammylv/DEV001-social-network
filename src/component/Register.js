@@ -128,7 +128,7 @@ export const Register = (onNavigate) => {
   const buttonGoogle = document.createElement('button');
   const imgGoogle = document.createElement('img');
   imgGoogle.className = 'imgGoogle';
-  imgGoogle.src = '../assets/img/google (1).png';
+  imgGoogle.src = 'https://i.postimg.cc/Vv17HkvB/google-1.png';
   buttonGoogle.appendChild(imgGoogle);
   buttonGoogle.classList = 'btn_google';
   divForm.appendChild(buttonSubmit);
