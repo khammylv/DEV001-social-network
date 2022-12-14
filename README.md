@@ -30,7 +30,8 @@ HU4 Yo como usuario quiero poder darle likes a las publicaciones.
 
 ## 5.Prototipo de alta fidelidad
 ![Lym![HU4](https://user-images.githubusercontent.com/113929552/207195431-c5d74527-dcd0-4c3a-9b86-979134692f05.png)
-usic](https://user-images.githubusercontent.com/113929552/207184880-22587966-5bf4-4c07-9973-0123c9ab9e26.png)
+usic![HU4](https://user-images.githubusercontent.com/113929552/207479854-90976ea2-6da3-46ed-821e-03f785a0cdbd.png)
+](https://user-images.githubusercontent.com/113929552/207184880-22587966-5bf4-4c07-9973-0123c9ab9e26.png)
 
 
 ## 6.prototipo Mobile
