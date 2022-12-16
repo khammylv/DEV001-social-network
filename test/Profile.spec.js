@@ -1,6 +1,6 @@
 import { Profile } from '../src/component/Profile.js';
 
-jest.mock('../src/__mocks__/main.js');
+jest.mock('../src/main.js');
 jest.mock('firebase/auth');
 
 describe('test de Profile', () => {

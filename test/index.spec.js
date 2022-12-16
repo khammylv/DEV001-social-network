@@ -4,7 +4,7 @@
 import * as index from '../src/lib/index.js';
 
 jest.mock('firebase/auth');
-jest.mock('../src/__mocks__/main.js');
+jest.mock('../src/main.js');
 
 describe('test de index', () => {
   it('funcion registro', () => {

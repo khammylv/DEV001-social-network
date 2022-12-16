@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import { formularioregistro, formularioGoogle } from '../lib/index.js';
 import { Rutas } from '../lib/rutas.js';
 

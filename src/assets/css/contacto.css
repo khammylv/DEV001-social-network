@@ -13,8 +13,7 @@
     width: 90%;
     text-align: center;
     overflow: hidden;
-    margin-top: -70px;
-  }
+}
 
   .contenedor h3 {
     font-size: var(--titulos);

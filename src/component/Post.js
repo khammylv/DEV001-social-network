@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import {
   onGetTasks, viewUser,
 } from '../lib/index.js';
@@ -11,11 +10,6 @@ const PostHandler = (doc, id, user, name) => {
   const cardDiv = document.createElement('div');
   cardDiv.className = 'cardCont';
   cardDiv.setAttribute('id', id);
-
-  /* const notas = document.createElement('img');
-  notas.className = 'notas';
-  notas.src = '../assets/img/music-notes.png';
-  cardDiv.appendChild(notas); */
 
   const cajaPost = document.createElement('div');
   cajaPost.className = 'cajaPost';

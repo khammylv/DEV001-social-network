@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import { formulariologin, formularioGoogle } from '../lib/index.js';
 import { Rutas } from '../lib/rutas.js';
 
@@ -154,7 +153,6 @@ export const Login = (onNavigate) => {
     formulariologin(email.value, pass.value).then(() => {
       onNavigate(Rutas('login'));
       form.reset();
-      window.location.reload();
     }).catch((err) => {
       modal.style.display = 'block';
 

@@ -1,9 +1,7 @@
-/* eslint-disable import/no-unresolved */
-// import { getAuth } from 'firebase/auth';
 import { Begin } from '../src/component/Begin.js';
 import { signOut } from '../src/lib/index.js';
 
-jest.mock('../src/__mocks__/main.js');
+jest.mock('../src/main.js');
 jest.mock('firebase/auth');
 jest.mock('../src/lib/index.js');
 // estos son los test
@@ -13,7 +11,7 @@ describe('test de begin', () => {
   });
   it('Activar menu lateral', () => {
     const elemento = Begin();
-    const botonMenu = elemento.querySelector('.imgMenu');
+    const botonMenu = elemento.querySelector('.checkMenuIcon');
     const menuLateral = elemento.querySelector('.asideMenu');
     expect(botonMenu).not.toBeNull();
     menuLateral.style.display = 'none';
@@ -22,7 +20,7 @@ describe('test de begin', () => {
   });
   it('desactivar menu lateral', () => {
     const elemento = Begin();
-    const botonMenu = elemento.querySelector('.imgMenu');
+    const botonMenu = elemento.querySelector('.checkMenuIcon');
     const menuLateral = elemento.querySelector('.asideMenu');
     menuLateral.style.display = 'block';
     botonMenu.click();

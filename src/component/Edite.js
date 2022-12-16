@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import {
   updateTask,
 } from '../lib/index.js';

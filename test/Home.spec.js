@@ -1,7 +1,6 @@
-/* eslint-disable import/no-unresolved */
 import { Home } from '../src/component/Home.js';
 
-jest.mock('../src/__mocks__/main.js');
+jest.mock('../src/main.js');
 describe('test de home', () => {
   it('debería ser una función', () => {
     expect(typeof Home).toBe('function');

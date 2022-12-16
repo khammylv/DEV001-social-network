@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import {
   signOut, viewUser,
 } from '../lib/index.js';
@@ -28,9 +27,6 @@ export const Begin = (onNavigate) => {
   imgMenuH.src = 'https://i.postimg.cc/8P2WmnYN/menu-removebg-preview.png';
   checkMenu.appendChild(imgMenuH);
   iconoMenu.appendChild(checkMenu);
-  const imgMenu = document.createElement('span');
-  imgMenu.className = 'imgMenu checkmenuImg';
-  iconoMenu.appendChild(imgMenu);
   headerPerfil.appendChild(nombrePerfil);
   const nombreUs = document.createElement('h3');
   const fotoUs = document.createElement('img');

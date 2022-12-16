@@ -14,13 +14,10 @@
     margin: auto;
 }
 .logo {
-    
     text-align: right;
     width: 90%;
     height: 75%;
     margin: auto;
-   
-    
 } 
 .divCentro{
     padding-top:50px;
@@ -93,6 +90,29 @@
     flex-direction: column;
     
     
+}
+@media (min-width: 600px){
+    .divBotones {
+        padding-top: 50px;
+        width: 60%;
+        height: auto;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+    
+    }
+    .divCentro{
+        padding-top:30px;
+        margin-top: 0px;
+        width: 100%;
+        height: 70%;
+        box-shadow: var(--sombra_botones);
+        border-radius: 30px;
+       
+        
+    }
 }
 @media (min-width: 920px){
     .contenedor_home{

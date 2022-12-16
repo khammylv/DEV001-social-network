@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import {
   deleteTasks,
 } from '../lib/index.js';

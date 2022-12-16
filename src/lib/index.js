@@ -1,5 +1,3 @@
-/* eslint-disable import/no-unresolved */
-// funciones puras//
 import {
   getAuth, createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -11,8 +9,7 @@ import {
   collection, addDoc, onSnapshot, deleteDoc, doc, updateDoc, getDoc,
 } from 'firebase/firestore';
 import { app, db } from './Firebase.js';
-// updateDoc,
-// GETUTH
+
 export const auth = getAuth(app);
 // eslint-disable-next-line max-len
 export const formularioregistro = (email, password) => createUserWithEmailAndPassword(auth, email, password);

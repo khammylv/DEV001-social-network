@@ -1,7 +1,6 @@
-/* eslint-disable import/no-unresolved */
 import { viewUser, updateUser } from '../lib/index.js';
 import { Rutas } from '../lib/rutas.js';
-// updateProfile,
+
 export const Profile = (onNavigate) => {
   /* Div padre */
   const HomeDiv = document.createElement('section');
