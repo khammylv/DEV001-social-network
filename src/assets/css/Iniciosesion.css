@@ -2,14 +2,11 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-image: url(../img/musica2.jpg);
-  /*background-image: linear-gradient(-225deg, rgba(255, 60, 172, 0.5) 0%, rgba(86, 43, 124) 52%, rgb(43, 134, 197) 100%),url(../img/sinFondo.png);*/
-  background-repeat: no-repeat;
+  background: linear-gradient(to bottom, rgba(17, 15, 15, 0.2) 0%, rgba(0, 0, 0, 0.2) 40%, rgb(0, 0, 0, 0.2) 150%), linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 200%),url(../img/musica2.jpg);
+  background-attachment: fixed;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-  /*background-attachment: fixed;
-    background-position: center;*/
 }
 
 .container_login {
@@ -27,9 +24,6 @@
   border: none;
   border-radius: 50%;
   font-weight: 700;
-  font-size: 40px;
-  color: white;
-  padding-bottom: 10px;
   background: none;
   cursor: pointer;
 }
@@ -43,8 +37,7 @@
 .mensajeBienvenida2 h2 {
   font-weight: 700;
   font-size: 35px;
-  color: #7400b8;
-  /*-webkit-text-stroke: 0.4px #240046;*/
+  color: #43e97b;
 
 }
 
@@ -58,7 +51,7 @@
 }
 
 .formulariologin h2 {
-  color: #deabfb;
+  color: #38f9d7;
   text-align: center;
   font-weight: 700;
 }
@@ -83,7 +76,7 @@ border-bottom: 1px solid var(--colorTextos);
 .emailLogin:focus,
 .passLogin:focus {
   outline: none;
-  color: #000000;
+  color: #43e97b;
 }
 
 .labelEmailLogin,
@@ -137,8 +130,8 @@ border-bottom: 1px solid var(--colorTextos);
 }
 
 .btn_form_login {
-  /*background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);*/
-  background: var(--color_boton_login);
+  background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+  /*background: var(--color_boton_login);*/
   border: none;
   display: block;
   width: 80%;
@@ -149,12 +142,15 @@ border-bottom: 1px solid var(--colorTextos);
   text-transform: uppercase;
   cursor: pointer;
   border-radius: 5px;
+  font-weight: 700;
+}
+.btn_form_login:hover{
+  background: linear-gradient(-225deg, rgba(212, 255, 236, 0.5) 0%, #57F2CC 48%, #4596FB 100%)
 }
 
 .btn_googleL {
   border: none;
   display: block;
-  /*width: 80%;*/
   margin: 10px auto;
   height: 40px;
   background: none;
@@ -170,26 +166,18 @@ border-bottom: 1px solid var(--colorTextos);
 @media (min-width: 900px) {
   .con_form_login {
     display: flex;
+    width: 80%;
+    margin: auto;
   }
 
   .divPadre2 {
-    height: 100%;
-    width: 100%;
-    background-image: url(../img/musica.jpg);
-    background-repeat: no-repeat;
+    background: linear-gradient(to bottom, rgba(17, 15, 15, 0.2) 0%, rgba(0, 0, 0, 0.2) 40%, rgb(0, 0, 0, 0.2) 150%), linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 200%),url(../img/musica.jpg);
+    background-attachment: fixed;
     background-position: center;
-    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
-.imgLogin {
-  height: 100%;
-  width: 50%;
-  background-image: url(../img/login.gif);
-  background-repeat: no-repeat;
-  position: absolute;
-  background-size: 350px;
-  margin-top: 200px;
-  margin-left: 150px;
-}
+
   .formulariologin {
     width: 400px;
     margin-left: -10px;
@@ -197,15 +185,19 @@ border-bottom: 1px solid var(--colorTextos);
   }
 
   .img_container_login {
-    display: block;
+    display: flex;
     width: 60%;
     height: 100%;
-    background: #43e97b;
+    align-items:center;
+    margin: auto;
   }
-
+  .music_img_login{
+    width: 50%;
+    height: 50%;
+  }
   .mensajeBienvenida2 h2 {
     font-size: 50px;
-    -webkit-text-stroke: 0.6px #48bfe3;
+   
   }
 
   .btn_home_login {

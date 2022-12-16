@@ -1,30 +1,192 @@
-.contenedor_home {
+.contenedor_home{
     width: 100%;
     height: 100vh;
-    background: var(--fondo_home)
+    background-image: url(../img/musica2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    
+}
+.contenedor_todo{
+    width: 100%;
+    height:100%;
+    margin: auto;
+}
+.logo {
+    
+    text-align: right;
+    width: 90%;
+    height: 75%;
+    margin: auto;
+   
+    
+} 
+.divCentro{
+    padding-top:50px;
+    margin-top: 15px;
+    width: 100%;
+    height: 80%;
+    box-shadow: var(--sombra_botones);
+    border-radius: 30px;
+   
+    
+}
+.img_centro{
+  margin: auto;
+  width: 100%;
+  height: 70%;
+}
+
+
+.letraLogo {
+    font-family: 'Aladin', cursive;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-right: 50px;
+    color: white;
+    display: inline-block;
+    font-size: 50px;
+    
+}
+
+
+.botonregistro {
+    cursor: pointer;
+    width: var(--ancho_botones);
+    height: var(--alto_botones);
+    font-size: var(--letra_texto_tamaño);
+    border: none;
+    border-radius: 10px;
+    background: var(--color_boton_registro);
+    color: #fae0e4;
+    box-shadow: var(--sombra_botones);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.botonregistro:hover{
+    background: var(--color_boton_registro_hover);
+}
+.botoniniciosesion {
+    cursor: pointer;
+    width: var(--ancho_botones);
+    height: var(--alto_botones);
+    font-size: var(--letra_texto_tamaño);
+    border: none;
+    border-radius: 10px;
+    background: var(--color_boton_login);
+    color: white;
+    box-shadow: var(--sombra_botones);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.botoniniciosesion:hover{
+    background: var(--color_boton_login_hover);
+}
+.divBotones {
+   width: 100%;
+    height: 20%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    
+    
+}
+@media (min-width: 920px){
+    .contenedor_home{
+         background-image: url(../img/musica.jpg);
+    }
+    .contenedor_todo{
+        width: 100%;
+        height:100%;
+        margin: auto;
+    }
+    .logo{
+        height: 600px;
+        width: 60%;
+    }
+    
+    .img_centro{
+        width: 50%;
+        height: 50%;
+    }
+    .divCentro{
+        display: flex;
+        align-items: center;
+        padding: 25px;
+    }
+    .divBotones {
+        padding-top: 50px;
+        width: 60%;
+        height: auto;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+    
+    }
+    .letraLogo {
+        font-weight: 700;
+        margin-top: 20px;
+        margin-right: 50px;
+        color: white;
+        display: inline-block;
+        font-size: 80px;
+        -webkit-text-stroke: 0.4px #43e97b;
+    }
+    .botonregistro {
+        cursor: pointer;
+        width: var(--ancho_botones);
+        height: var(--alto_botones);
+        font-size: var(--letra_texto_tamaño);
+        border: none;
+        border-radius: 10px;
+        background: var(--color_boton_registro);
+        color: #fae0e4;
+        
+        text-transform: uppercase;
+    }
+    
+    .botoniniciosesion {
+        cursor: pointer;
+        width: var(--ancho_botones);
+        height: var(--alto_botones);
+        font-size: var(--letra_texto_tamaño);
+        border: none;
+        border-radius: 10px;
+        background: var(--color_boton_login);
+        color: #fae0e4;
+        box-shadow: var(--sombra_botones);
+        text-transform: uppercase;
+    }
+    
+}
+
+
+
+/*.contenedor_home {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/musica2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
 }
 
 .contenedor_todo {
     width: 100%;
     height: 100%;
     margin: auto;
-    background: rgba(0, 0, 0, 0.5);
-
 }
 
 .logo {
     text-align: center;
-    width: 100%;
-    height: 100%;
     margin: auto;
-    background-image: url(../img/musica2.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-
-
-}
+ }
 
 .letraLogo {
     font-family: 'Libre Baskerville', serif;
@@ -84,18 +246,90 @@
     top: -20em;
 }
 
-@media (min-width: 920px) {
-    .logo {
-        height: 100%;
-        width: 100%;
+@media (min-width: 900px) {
+    .contenedor_home{
         background-image: url(../img/musica.jpg);
+    }
+    .contenedor_todo{
+        width: 100%;
+        height:100%;
+        margin: auto;
+       
+        
+    }
+    /*.logo {
+        width: 100%;
+        height: 80%;
+        background-image: url(../img/let.gif);
         background-repeat: no-repeat;
         background-position: center;
-        position: absolute;
-
+        box-shadow: var(--sombra_botones);
+        border-radius: 30px;
+    }*/
+    /*
+    .divCentro {
+        height: 50%;
+        width: 50%;
+        background-image: url(../img/let.gif);
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        box-shadow: var(--sombra_botones);
+        border-radius: 30px;
+        margin: auto;
+    }
+    .letraLogo {
+        font-family: 'Libre Baskerville', serif;
+        font-weight: 700;
+        margin-top: 20px;
+        margin-right: 50px;
+        color: white;
+        display: inline-block;
+        font-size: 50px;
+    }
+    .botonregistro {
+        cursor: pointer;
+        width: var(--ancho_botones);
+        height: var(--alto_botones);
+        font-size: var(--letra_texto_tamaño);
+        border: none;
+        border-radius: 10px;
+        background: var(--color_boton_registro);
+        color: #fae0e4;
+        
+        text-transform: uppercase;
+    }
+    
+    .botoniniciosesion {
+        cursor: pointer;
+        width: var(--ancho_botones);
+        height: var(--alto_botones);
+        font-size: var(--letra_texto_tamaño);
+        border: none;
+        border-radius: 10px;
+        background: var(--color_boton_login);
+        color: #fae0e4;
+        box-shadow: var(--sombra_botones);
+        text-transform: uppercase;
     }
 
-    .divCentro {
+    .divBotones {
+        padding-top: 25px;
+        width: 60%;
+        height: 20%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: f;
+        justify-content: space-evenly;
+    
+    }
+    
+    
+}
+
+
+    /*.divCentro {
         height: 50%;
         width: 50%;
         background-image: url(../img/let.gif);
@@ -107,9 +341,9 @@
         z-index: 3;
         box-shadow: var(--sombra_botones);
         border-radius: 30px;
-    }
+    }*/
 
-    .divBotones {
+    /*.divBotones {
         flex-direction: row;
         width: 60%;
         position: relative;
@@ -120,9 +354,9 @@
         text-align: right;
         margin-top: 40px;
         margin-right: -70%;
-    }
-}
+    }*/
 
+/*
 @media (min-width: 1020) {
     .contenedor_home {
         width: 100%;
@@ -158,8 +392,8 @@
         color: #fae0e4;
 
         text-transform: uppercase;
-    }
-
+    }*/
+    /*
     .botoniniciosesion {
         cursor: pointer;
         width: var(--ancho_botones);
@@ -183,4 +417,4 @@
         justify-content: space-evenly;
 
     }
-}
+}*/

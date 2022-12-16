@@ -17,7 +17,6 @@
 }
  :root{
   /* variables de home */
-  --fondo_home: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
   --ancho_botones: 200px;
   --alto_botones: 40px;
   --letra_texto_tamaño:17px;

@@ -2,22 +2,19 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-image: url(../img/musica2.jpg);
-  /*background-image: linear-gradient(-225deg, rgba(255, 60, 172, 0.5) 0%, rgba(86, 43, 124) 52%, rgb(43, 134, 197) 100%),url(../img/sinFondo.png);*/
-  background-repeat: no-repeat;
+  background: linear-gradient(to bottom, rgba(17, 15, 15, 0.2) 0%, rgba(0, 0, 0, 0.2) 40%, rgb(0, 0, 0, 0.2) 150%), linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 200%),url(../img/musica2.jpg);
+  background-attachment: fixed;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-  /*background-attachment: fixed;
-  background-position: center;*/
-}
+ }
 
 .container_registro {
   width: 100%;
   height: 100%;
 }
 
-.img_container_registro {
+.img_container_registro{
   display: none;
 }
 
@@ -43,8 +40,7 @@
 .mensajeBienvenida h2 {
   font-weight: 700;
   font-size: 35px;
-  /*color: #80ffdb;
-  -webkit-text-stroke: 0.4px #48bfe3;*/
+  /*color: #80ffdb;*/
   color: #fe77f8;
 }
 
@@ -83,7 +79,7 @@
 .email_registro:focus,
 .pass_registro:focus {
   outline: none;
-  color: #5e5d5d;
+  color: #b20edb;
 }
 
 .labelEmail,
@@ -137,8 +133,7 @@
 }
 
 .btn_formulario_registro {
-  /*background: linear-gradient(to right, #B06AB3, #4568DC);*/
-  background: var(--color_boton_registro);
+  background: linear-gradient(to right, #B06AB3, #4568DC);
   border: none;
   display: block;
   width: 80%;
@@ -149,12 +144,15 @@
   text-transform: uppercase;
   cursor: pointer;
   border-radius: 5px;
+  font-weight: 700;
+}
+.btn_formulario_registro:hover{
+  background: linear-gradient(-225deg, #AC32E4 0%, #7918F2 48%, #4801FF 100%);
 }
 
 .btn_google {
   border: none;
   display: block;
-  /*width: 80%;*/
   margin: 10px auto;
   height: 40px;
   background: none;
@@ -166,30 +164,23 @@
   cursor: pointer;
 
 }
+.ojito2{
+ cursor: pointer;
+}
 
-@media (min-width: 920px) {
+@media (min-width: 900px) {
   .con_form_registro {
     display: flex;
+    width: 80%;
+    margin: auto;
   }
 
   .divPadre {
-    height: 100%;
-    width: 100%;
-    background-image: url(../img/musica.jpg);
-    background-repeat: no-repeat;
+    background: linear-gradient(to bottom, rgba(17, 15, 15, 0.2) 0%, rgba(0, 0, 0, 0.2) 40%, rgb(0, 0, 0, 0.2) 150%), linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 200%),url(../img/musica.jpg);
+    background-attachment: fixed;
     background-position: center;
-    position: absolute;
-  }
-
-.imgRegistro {
-    height: 100%;
-    width: 50%;
-    background-image: url(../img/regis.gif);
     background-repeat: no-repeat;
-    position: absolute;
-    background-size: 300px;
-    margin-top: 200px;
-margin-left: 150px;
+    background-size: cover;
   }
 
   .formularioRegistro {
@@ -199,15 +190,20 @@ margin-left: 150px;
   }
 
   .img_container_registro {
-    display: block;
+    display: flex;
     width: 60%;
     height: 100%;
-    background: rgba(255, 60, 172)
+    align-items:center;
+    margin: auto;
+  }
+  .music_img{
+    width: 40%;
+    height: 40%;
   }
 
   .mensajeBienvenida h2 {
     font-size: 50px;
-    -webkit-text-stroke: 0.6px #48bfe3;
+   
   }
 
   .btn_home_registro {

@@ -6,16 +6,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /*background-image: url(../img/musica2.jpg);  
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    
-    /*background: linear-gradient(to bottom, rgba(17, 15, 15, 0.5) 0%, rgba(0, 0, 0, 0.6) 40%, rgb(0, 0, 0, 0.9) 150%), linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 200%)/*,url(../img/sinFondo.png);
-  background-blend-mode: multiply;*/
-
- 
 }
 
 /*cambiar en pc el height*/
@@ -180,21 +170,6 @@ background-image: url(../img/musica.jpg);
     margin-bottom: 15px;
 
 }
-.notas{
-    width: 60px;
-    height: 60px;
-    display: inline;
-    position: relative;
-    right: -210px;
-   /* position: relative;
-    display: inline;
-    width: 30px;
-    height: 30px;
-    top: 0;
-    right: -210px;*/
-    
-}
-
 .cajaPost {
     width: 90%;
     height: 70%;
@@ -586,14 +561,6 @@ background-image: url(../img/musica.jpg);
     .sectionBody{
         margin-top: 100px;
     }
-    /*
-    .notas {
-           display: inline-block;
-            width: 40px;
-            height: 40px;
-            position: relative;
-            top: -250px;
-            right: -210px;
-    }*/
+
 
 }

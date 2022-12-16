@@ -12,6 +12,9 @@ export const Home = (onNavigate) => {
   // caja de dibujo centro
   const divCentro = document.createElement('div');
   divCentro.className = 'divCentro';
+  const imagenCentro = document.createElement('img');
+  imagenCentro.className = 'img_centro';
+  imagenCentro.src = 'https://i.postimg.cc/9QyrGQ2m/let.gif';
 
   // caja de los botones
   const divBotones = document.createElement('div');
@@ -29,11 +32,12 @@ export const Home = (onNavigate) => {
   buttonLogin.addEventListener('click', () => onNavigate('/login'));
 
   divLogo.appendChild(letraLogo);
+  divLogo.appendChild(divCentro);
+  divCentro.appendChild(imagenCentro);
   divBotones.appendChild(buttonRegister);
   divBotones.appendChild(buttonLogin);
   contenedorTodo.appendChild(divLogo);
   contenedorTodo.appendChild(divBotones);
-  contenedorTodo.appendChild(divCentro);
   HomeDiv.appendChild(contenedorTodo);
   return HomeDiv;
 };

@@ -49,10 +49,6 @@ export const Register = (onNavigate) => {
   // cont div registro
   const divRegisro = document.createElement('div');
   divRegisro.className = 'con_form_registro';
-  // imagen de registro
-  const imgRegistro = document.createElement('div');
-  imgRegistro.className = 'imgRegistro';
-  divcontainer.appendChild(imgRegistro);
 
   // boton retorno
   const divBoton = document.createElement('div');
@@ -67,13 +63,17 @@ export const Register = (onNavigate) => {
   // div titulo y textos
   const divBienvenida = document.createElement('div');
   const mensajeBienvenida = document.createElement('h2');
-  mensajeBienvenida.textContent = 'Welcome';
+  mensajeBienvenida.textContent = 'Hi! Welcome to Lymusic';
   divBienvenida.appendChild(mensajeBienvenida);
   divBienvenida.className = 'mensajeBienvenida';
   divcontainer.appendChild(divBienvenida);
   // imagen tamaño pc
   const divImgContainer = document.createElement('div');
   divImgContainer.className = 'img_container_registro';
+  const imagenMusica = document.createElement('img');
+  imagenMusica.className = 'music_img';
+  imagenMusica.src = 'https://i.postimg.cc/XNDBfvZF/regis.gif';
+  divImgContainer.appendChild(imagenMusica);
   divRegisro.appendChild(divImgContainer);
   // formulario
   const form = document.createElement('form');
