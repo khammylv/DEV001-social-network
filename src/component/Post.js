@@ -26,8 +26,11 @@ const PostHandler = (doc, id, user, name) => {
   const cajaLike = document.createElement('div');
   cajaLike.className = 'cajaLike';
   const btnLike = document.createElement('button');
-  btnLike.innerText = '❤';
-  btnLike.setAttribute('id', id);
+  const imgLike = document.createElement('img');
+  imgLike.classList = 'imgLike';
+  imgLike.src = 'https://i.postimg.cc/Tw7KkvYQ/corazon-blanco.png';
+  imgLike.setAttribute('id', id);
+  btnLike.appendChild(imgLike);
   const numLike = document.createElement('p');
   numLike.className = 'numLike';
   const numLikes = doc.like.length - 1;
@@ -79,7 +82,7 @@ const PostHandler = (doc, id, user, name) => {
     cajaEdit.appendChild(btnSaveText);
   }
   if (postUS.like.includes(user)) {
-    btnLike.style.color = '#ff0054';
+    imgLike.src = 'https://i.postimg.cc/FK2r1FRM/corazon-rosa.png';
   }
   return cardDiv;
 };

@@ -128,6 +128,11 @@ export const Profile = (onNavigate) => {
       if (user !== null) {
         nombre.value = user.displayName;
         imgPerfil.value = user.photoURL;
+        if (imgPerfil.value !== null) {
+          console.log('nulo');
+          imgPerfil.value = 'https://i.postimg.cc/cCNhT39d/blank-profile-picture-973460-1280.png';
+        }
+        console.log(imgPerfil.value);
       }
     } else {
       modal.style.display = 'none';
